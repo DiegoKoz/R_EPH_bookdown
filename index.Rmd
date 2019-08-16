@@ -4,7 +4,34 @@ author: "Pablo Tiscornia - Guido Weksler - Diego Kozlowski - Natsumi Shokida."
 site: bookdown::bookdown_site
 documentclass: book
 output:
-  bookdown::gitbook: default
+  bookdown::gitbook:
+    config:
+      toc:
+        collapse: subsection
+        scroll_highlight: yes
+        before: null
+        after: null
+      toolbar:
+        position: fixed
+      edit : https://github.com/DiegoKoz/R_EPH_bookdown/edit/master/%s
+      download: null
+      search: yes
+      fontsettings:
+        theme: white
+        family: sans
+        size: 2
+      sharing:
+        facebook: no
+        twitter: no
+        google: no
+        linkedin: no
+        weibo: no
+        instapaper: no
+        vk: no
+        all: ['facebook', 'google', 'twitter', 'linkedin', 'instapaper']
+github-repo: DiegoKoz/R_EPH_bookdown
+description: "Introducción a R para Ciencias Sociales. Aplicación practica en la EPH"
+  
   # bookdown::pdf_book: default
 ---
 
