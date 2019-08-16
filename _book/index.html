@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Introducción a R para Ciencias Sociales. Aplicación practica en la EPH</title>
+  <meta name="description" content="Introducción a R para Ciencias Sociales. Aplicación practica en la EPH">
+  <meta name="generator" content="bookdown  and GitBook 2.6.7">
+
+  <meta property="og:title" content="Introducción a R para Ciencias Sociales. Aplicación practica en la EPH" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Introducción a R para Ciencias Sociales. Aplicación practica en la EPH" />
+  
+  
+  
+
+<meta name="author" content="Pablo Tiscornia - Guido Weksler - Diego Kozlowski - Natsumi Shokida.">
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+
+<link rel="next" href="conceptos-principales-de-eph.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introducción</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#presentacion"><i class="fa fa-check"></i><b>1.1</b> Presentación</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#objetivos-del-curso"><i class="fa fa-check"></i><b>1.2</b> Objetivos del curso</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#clases-y-contenido"><i class="fa fa-check"></i><b>1.3</b> Clases y contenido</a></li>
+<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#librerias-a-instalar"><i class="fa fa-check"></i><b>1.4</b> Librerias a instalar</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="conceptos-principales-de-eph.html"><a href="conceptos-principales-de-eph.html"><i class="fa fa-check"></i><b>2</b> Conceptos Principales de EPH</a><ul>
+<li class="chapter" data-level="2.1" data-path="conceptos-principales-de-eph.html"><a href="conceptos-principales-de-eph.html#que-es-la-eph"><i class="fa fa-check"></i><b>2.1</b> ¿Qué es la EPH?</a></li>
+<li class="chapter" data-level="2.2" data-path="conceptos-principales-de-eph.html"><a href="conceptos-principales-de-eph.html#traduzcamos"><i class="fa fa-check"></i><b>2.2</b> Traduzcamos</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="conceptos-principales-de-eph.html"><a href="conceptos-principales-de-eph.html#objetivos-de-la-eph"><i class="fa fa-check"></i><b>2.2.1</b> Objetivos de la EPH</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="conceptos-principales-de-eph.html"><a href="conceptos-principales-de-eph.html#caracteristicas-de-la-eph"><i class="fa fa-check"></i><b>2.3</b> Características de la EPH</a></li>
+<li class="chapter" data-level="2.4" data-path="conceptos-principales-de-eph.html"><a href="conceptos-principales-de-eph.html#la-muestra"><i class="fa fa-check"></i><b>2.4</b> La Muestra</a><ul>
+<li class="chapter" data-level="2.4.1" data-path="conceptos-principales-de-eph.html"><a href="conceptos-principales-de-eph.html#principales-tematicas-abordadas-por-la-eph"><i class="fa fa-check"></i><b>2.4.1</b> Principales temáticas abordadas por la EPH</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="conceptos-principales-de-eph.html"><a href="conceptos-principales-de-eph.html#instrumento-de-medicion-el-medio-hacia-la-operacionalizacion-de-los-objetivos"><i class="fa fa-check"></i><b>2.5</b> Instrumento de medición: El medio hacia la operacionalización de los objetivos</a></li>
+<li class="chapter" data-level="2.6" data-path="conceptos-principales-de-eph.html"><a href="conceptos-principales-de-eph.html#tres-cuestionarios"><i class="fa fa-check"></i><b>2.6</b> Tres cuestionarios</a><ul>
+<li class="chapter" data-level="2.6.1" data-path="conceptos-principales-de-eph.html"><a href="conceptos-principales-de-eph.html#cuestionario-de-vivienda"><i class="fa fa-check"></i><b>2.6.1</b> Cuestionario de vivienda</a></li>
+<li class="chapter" data-level="2.6.2" data-path="conceptos-principales-de-eph.html"><a href="conceptos-principales-de-eph.html#cuestionario-de-hogar"><i class="fa fa-check"></i><b>2.6.2</b> Cuestionario de hogar</a></li>
+</ul></li>
+<li class="chapter" data-level="2.7" data-path="conceptos-principales-de-eph.html"><a href="conceptos-principales-de-eph.html#marco-analitico-y-tematico-de-la-eph"><i class="fa fa-check"></i><b>2.7</b> Marco analítico y temático de la EPH</a><ul>
+<li class="chapter" data-level="2.7.1" data-path="conceptos-principales-de-eph.html"><a href="conceptos-principales-de-eph.html#cuestionario-de-individuos"><i class="fa fa-check"></i><b>2.7.1</b> Cuestionario de individuos</a></li>
+</ul></li>
+<li class="chapter" data-level="2.8" data-path="conceptos-principales-de-eph.html"><a href="conceptos-principales-de-eph.html#cuestinario-individual-principales-indicadores"><i class="fa fa-check"></i><b>2.8</b> Cuestinario individual: Principales indicadores</a></li>
+<li class="chapter" data-level="2.9" data-path="conceptos-principales-de-eph.html"><a href="conceptos-principales-de-eph.html#caracterizacion-de-la-poblacion-ocupada"><i class="fa fa-check"></i><b>2.9</b> Caracterización de la población ocupada</a><ul>
+<li class="chapter" data-level="2.9.1" data-path="conceptos-principales-de-eph.html"><a href="conceptos-principales-de-eph.html#otros-indicadores-para-describir-a-la-poblacion-ocupada"><i class="fa fa-check"></i><b>2.9.1</b> Otros indicadores para describir a la población ocupada</a></li>
+<li class="chapter" data-level="2.9.2" data-path="conceptos-principales-de-eph.html"><a href="conceptos-principales-de-eph.html#caracterizacion-de-la-poblacion-desocupada"><i class="fa fa-check"></i><b>2.9.2</b> Caracterízación de la población desocupada</a></li>
+<li class="chapter" data-level="2.9.3" data-path="conceptos-principales-de-eph.html"><a href="conceptos-principales-de-eph.html#clasificadores-utilizados-en-la-eph-rama-de-actividad-y-tarea-ocupacion"><i class="fa fa-check"></i><b>2.9.3</b> Clasificadores utilizados en la EPH (Rama de actividad y Tarea / Ocupación)</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="introduccion-a-r.html"><a href="introduccion-a-r.html"><i class="fa fa-check"></i><b>3</b> Introducción a R</a><ul>
+<li class="chapter" data-level="3.0.1" data-path="introduccion-a-r.html"><a href="introduccion-a-r.html#que-es-r"><i class="fa fa-check"></i><b>3.0.1</b> ¿Que es R?</a></li>
+<li class="chapter" data-level="3.0.2" data-path="introduccion-a-r.html"><a href="introduccion-a-r.html#diferencias-con-stata-y-spss"><i class="fa fa-check"></i><b>3.0.2</b> Diferencias con STATA y SPSS</a></li>
+<li class="chapter" data-level="3.1" data-path="introduccion-a-r.html"><a href="introduccion-a-r.html#logica-sintactica."><i class="fa fa-check"></i><b>3.1</b> Lógica sintáctica.</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="introduccion-a-r.html"><a href="introduccion-a-r.html#definicion-de-objetos"><i class="fa fa-check"></i><b>3.1.1</b> Definición de objetos</a></li>
+<li class="chapter" data-level="3.1.2" data-path="introduccion-a-r.html"><a href="introduccion-a-r.html#r-base"><i class="fa fa-check"></i><b>3.1.2</b> R base</a></li>
+<li class="chapter" data-level="3.1.3" data-path="introduccion-a-r.html"><a href="introduccion-a-r.html#data-frames"><i class="fa fa-check"></i><b>3.1.3</b> Data Frames</a></li>
+<li class="chapter" data-level="3.1.4" data-path="introduccion-a-r.html"><a href="introduccion-a-r.html#listas"><i class="fa fa-check"></i><b>3.1.4</b> Listas</a></li>
+<li class="chapter" data-level="3.1.5" data-path="introduccion-a-r.html"><a href="introduccion-a-r.html#instalacion-de-paquetes-complementarios-al-r-base"><i class="fa fa-check"></i><b>3.1.5</b> Instalación de paquetes complementarios al R Base</a></li>
+<li class="chapter" data-level="3.1.6" data-path="introduccion-a-r.html"><a href="introduccion-a-r.html#lectura-y-escritura-de-archivos"><i class="fa fa-check"></i><b>3.1.6</b> Lectura y escritura de archivos</a></li>
+<li class="chapter" data-level="3.1.7" data-path="introduccion-a-r.html"><a href="introduccion-a-r.html#ambientes-de-trabajo"><i class="fa fa-check"></i><b>3.1.7</b> Ambientes de trabajo</a></li>
+<li class="chapter" data-level="3.1.8" data-path="introduccion-a-r.html"><a href="introduccion-a-r.html#paquetes-a-utilizar-a-lo-largo-del-curso"><i class="fa fa-check"></i><b>3.1.8</b> Paquetes a utilizar a lo largo del curso:</a></li>
+<li class="chapter" data-level="3.1.9" data-path="introduccion-a-r.html"><a href="introduccion-a-r.html#ejercicios-para-practicar"><i class="fa fa-check"></i><b>3.1.9</b> Ejercicios para practicar</a></li>
+<li class="chapter" data-level="3.1.10" data-path="introduccion-a-r.html"><a href="introduccion-a-r.html#ejercicios-de-tarea"><i class="fa fa-check"></i><b>3.1.10</b> Ejercicios de tarea</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="tidyverse-y-tasas-basicas-del-mercado-de-trabajo.html"><a href="tidyverse-y-tasas-basicas-del-mercado-de-trabajo.html"><i class="fa fa-check"></i><b>4</b> Tidyverse y Tasas básicas del Mercado de Trabajo</a><ul>
+<li class="chapter" data-level="4.1" data-path="tidyverse-y-tasas-basicas-del-mercado-de-trabajo.html"><a href="tidyverse-y-tasas-basicas-del-mercado-de-trabajo.html#estructuracion-de-bases-de-datos"><i class="fa fa-check"></i><b>4.1</b> Estructuración de Bases de Datos</a></li>
+<li class="chapter" data-level="4.2" data-path="tidyverse-y-tasas-basicas-del-mercado-de-trabajo.html"><a href="tidyverse-y-tasas-basicas-del-mercado-de-trabajo.html#dplyr"><i class="fa fa-check"></i><b>4.2</b> Dplyr</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="tidyverse-y-tasas-basicas-del-mercado-de-trabajo.html"><a href="tidyverse-y-tasas-basicas-del-mercado-de-trabajo.html#filter"><i class="fa fa-check"></i><b>4.2.1</b> filter</a></li>
+<li class="chapter" data-level="4.2.2" data-path="tidyverse-y-tasas-basicas-del-mercado-de-trabajo.html"><a href="tidyverse-y-tasas-basicas-del-mercado-de-trabajo.html#rename"><i class="fa fa-check"></i><b>4.2.2</b> rename</a></li>
+<li class="chapter" data-level="4.2.3" data-path="tidyverse-y-tasas-basicas-del-mercado-de-trabajo.html"><a href="tidyverse-y-tasas-basicas-del-mercado-de-trabajo.html#mutate"><i class="fa fa-check"></i><b>4.2.3</b> mutate</a></li>
+<li class="chapter" data-level="4.2.4" data-path="tidyverse-y-tasas-basicas-del-mercado-de-trabajo.html"><a href="tidyverse-y-tasas-basicas-del-mercado-de-trabajo.html#case_when"><i class="fa fa-check"></i><b>4.2.4</b> case_when</a></li>
+<li class="chapter" data-level="4.2.5" data-path="tidyverse-y-tasas-basicas-del-mercado-de-trabajo.html"><a href="tidyverse-y-tasas-basicas-del-mercado-de-trabajo.html#select"><i class="fa fa-check"></i><b>4.2.5</b> select</a></li>
+<li class="chapter" data-level="4.2.6" data-path="tidyverse-y-tasas-basicas-del-mercado-de-trabajo.html"><a href="tidyverse-y-tasas-basicas-del-mercado-de-trabajo.html#arrange"><i class="fa fa-check"></i><b>4.2.6</b> arrange</a></li>
+<li class="chapter" data-level="4.2.7" data-path="tidyverse-y-tasas-basicas-del-mercado-de-trabajo.html"><a href="tidyverse-y-tasas-basicas-del-mercado-de-trabajo.html#summarise"><i class="fa fa-check"></i><b>4.2.7</b> summarise</a></li>
+<li class="chapter" data-level="4.2.8" data-path="tidyverse-y-tasas-basicas-del-mercado-de-trabajo.html"><a href="tidyverse-y-tasas-basicas-del-mercado-de-trabajo.html#group_by"><i class="fa fa-check"></i><b>4.2.8</b> group_by</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="tidyverse-y-tasas-basicas-del-mercado-de-trabajo.html"><a href="tidyverse-y-tasas-basicas-del-mercado-de-trabajo.html#joins"><i class="fa fa-check"></i><b>4.3</b> Joins</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="tidyverse-y-tasas-basicas-del-mercado-de-trabajo.html"><a href="tidyverse-y-tasas-basicas-del-mercado-de-trabajo.html#left_join"><i class="fa fa-check"></i><b>4.3.1</b> left_join</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="tidyverse-y-tasas-basicas-del-mercado-de-trabajo.html"><a href="tidyverse-y-tasas-basicas-del-mercado-de-trabajo.html#tidyr"><i class="fa fa-check"></i><b>4.4</b> Tidyr</a><ul>
+<li class="chapter" data-level="4.4.1" data-path="tidyverse-y-tasas-basicas-del-mercado-de-trabajo.html"><a href="tidyverse-y-tasas-basicas-del-mercado-de-trabajo.html#gather-y-spread"><i class="fa fa-check"></i><b>4.4.1</b> Gather y Spread</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="tidyverse-y-tasas-basicas-del-mercado-de-trabajo.html"><a href="tidyverse-y-tasas-basicas-del-mercado-de-trabajo.html#tasas-del-mercado-de-trabajo"><i class="fa fa-check"></i><b>4.5</b> Tasas del Mercado de Trabajo</a><ul>
+<li class="chapter" data-level="4.5.1" data-path="tidyverse-y-tasas-basicas-del-mercado-de-trabajo.html"><a href="tidyverse-y-tasas-basicas-del-mercado-de-trabajo.html#tasa-de-empleo"><i class="fa fa-check"></i><b>4.5.1</b> Tasa de Empleo</a></li>
+<li class="chapter" data-level="4.5.2" data-path="tidyverse-y-tasas-basicas-del-mercado-de-trabajo.html"><a href="tidyverse-y-tasas-basicas-del-mercado-de-trabajo.html#tasas-basicas---total-aglomerados"><i class="fa fa-check"></i><b>4.5.2</b> Tásas Básicas - Total Aglomerados</a></li>
+<li class="chapter" data-level="4.5.3" data-path="tidyverse-y-tasas-basicas-del-mercado-de-trabajo.html"><a href="tidyverse-y-tasas-basicas-del-mercado-de-trabajo.html#tasas-basicas-por-aglomerado"><i class="fa fa-check"></i><b>4.5.3</b> Tásas Básicas por Aglomerado</a></li>
+<li class="chapter" data-level="4.5.4" data-path="tidyverse-y-tasas-basicas-del-mercado-de-trabajo.html"><a href="tidyverse-y-tasas-basicas-del-mercado-de-trabajo.html#ejercicio-para-2-trimestres"><i class="fa fa-check"></i><b>4.5.4</b> Ejercicio para 2 trimestres</a></li>
+</ul></li>
+<li class="chapter" data-level="4.6" data-path="tidyverse-y-tasas-basicas-del-mercado-de-trabajo.html"><a href="tidyverse-y-tasas-basicas-del-mercado-de-trabajo.html#ejercicios-para-practicar-1"><i class="fa fa-check"></i><b>4.6</b> Ejercicios para practicar</a><ul>
+<li class="chapter" data-level="4.6.1" data-path="tidyverse-y-tasas-basicas-del-mercado-de-trabajo.html"><a href="tidyverse-y-tasas-basicas-del-mercado-de-trabajo.html#ejercicios-de-tarea-1"><i class="fa fa-check"></i><b>4.6.1</b> Ejercicios de tarea</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="calculo-de-pobreza-por-linea.html"><a href="calculo-de-pobreza-por-linea.html"><i class="fa fa-check"></i><b>5</b> Cálculo de Pobreza por Línea</a><ul>
+<li class="chapter" data-level="5.1" data-path="calculo-de-pobreza-por-linea.html"><a href="calculo-de-pobreza-por-linea.html#canastas-trimestrales-por-region"><i class="fa fa-check"></i><b>5.1</b> Canastas Trimestrales por Region</a></li>
+<li class="chapter" data-level="5.2" data-path="calculo-de-pobreza-por-linea.html"><a href="calculo-de-pobreza-por-linea.html#unidades-de-adulto-equivalente-por-hogar-en-la-base-individual"><i class="fa fa-check"></i><b>5.2</b> Unidades de Adulto Equivalente por hogar en la base Individual</a></li>
+<li class="chapter" data-level="5.3" data-path="calculo-de-pobreza-por-linea.html"><a href="calculo-de-pobreza-por-linea.html#calculo-de-tasas-de-pobreza-e-indigencia"><i class="fa fa-check"></i><b>5.3</b> Cálculo de Tasas de Pobreza e Indigencia</a></li>
+<li class="chapter" data-level="5.4" data-path="introduccion-a-r.html"><a href="introduccion-a-r.html#ejercicios-para-practicar"><i class="fa fa-check"></i><b>5.4</b> Ejercicios Para prácticar</a></li>
+<li class="chapter" data-level="5.5" data-path="calculo-de-pobreza-por-linea.html"><a href="calculo-de-pobreza-por-linea.html#ejercicios-de-tarea-2"><i class="fa fa-check"></i><b>5.5</b> Ejercicios de tarea</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="graficos-y-distribucion-del-ingreso.html"><a href="graficos-y-distribucion-del-ingreso.html"><i class="fa fa-check"></i><b>6</b> Gráficos y Distribución del Ingreso</a><ul>
+<li class="chapter" data-level="6.1" data-path="graficos-y-distribucion-del-ingreso.html"><a href="graficos-y-distribucion-del-ingreso.html#graficos-basicos-en-r"><i class="fa fa-check"></i><b>6.1</b> Gráficos Básicos en R</a><ul>
+<li class="chapter" data-level="6.1.1" data-path="graficos-y-distribucion-del-ingreso.html"><a href="graficos-y-distribucion-del-ingreso.html#png"><i class="fa fa-check"></i><b>6.1.1</b> png</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="graficos-y-distribucion-del-ingreso.html"><a href="graficos-y-distribucion-del-ingreso.html#ggplot2"><i class="fa fa-check"></i><b>6.2</b> <span>Ggplot2</span></a><ul>
+<li class="chapter" data-level="6.2.1" data-path="graficos-y-distribucion-del-ingreso.html"><a href="graficos-y-distribucion-del-ingreso.html#grafico-de-puntos"><i class="fa fa-check"></i><b>6.2.1</b> Gráfico de Puntos</a></li>
+<li class="chapter" data-level="6.2.2" data-path="graficos-y-distribucion-del-ingreso.html"><a href="graficos-y-distribucion-del-ingreso.html#extensiones-de-ggplot."><i class="fa fa-check"></i><b>6.2.2</b> Extensiones de <span>GGplot</span>.</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="graficos-y-distribucion-del-ingreso.html"><a href="graficos-y-distribucion-del-ingreso.html#graficos-ingresos---eph"><i class="fa fa-check"></i><b>6.3</b> Graficos Ingresos - EPH</a><ul>
+<li class="chapter" data-level="6.3.1" data-path="graficos-y-distribucion-del-ingreso.html"><a href="graficos-y-distribucion-del-ingreso.html#ingreso-de-la-ocupacion-principal"><i class="fa fa-check"></i><b>6.3.1</b> Ingreso de la ocupación principal</a></li>
+<li class="chapter" data-level="6.3.2" data-path="graficos-y-distribucion-del-ingreso.html"><a href="graficos-y-distribucion-del-ingreso.html#distribucion-de-los-ingresos-laborales-y-no-laborales-por-sexo"><i class="fa fa-check"></i><b>6.3.2</b> Distribución de los ingresos laborales y no laborales por sexo</a></li>
+<li class="chapter" data-level="6.3.3" data-path="graficos-y-distribucion-del-ingreso.html"><a href="graficos-y-distribucion-del-ingreso.html#otros-graficos"><i class="fa fa-check"></i><b>6.3.3</b> Otros gráficos</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="graficos-y-distribucion-del-ingreso.html"><a href="graficos-y-distribucion-del-ingreso.html#ejercicios"><i class="fa fa-check"></i><b>6.4</b> Ejercicios</a><ul>
+<li class="chapter" data-level="6.4.1" data-path="graficos-y-distribucion-del-ingreso.html"><a href="graficos-y-distribucion-del-ingreso.html#para-practicar"><i class="fa fa-check"></i><b>6.4.1</b> Para practicar</a></li>
+<li class="chapter" data-level="6.4.2" data-path="graficos-y-distribucion-del-ingreso.html"><a href="graficos-y-distribucion-del-ingreso.html#de-tarea"><i class="fa fa-check"></i><b>6.4.2</b> De tarea</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="pool-de-datos-en-panel-y-matrices-de-transicion.html"><a href="pool-de-datos-en-panel-y-matrices-de-transicion.html"><i class="fa fa-check"></i><b>7</b> Pool de Datos en Panel y Matrices de Transición</a><ul>
+<li class="chapter" data-level="7.1" data-path="pool-de-datos-en-panel-y-matrices-de-transicion.html"><a href="pool-de-datos-en-panel-y-matrices-de-transicion.html#datos-de-panel"><i class="fa fa-check"></i><b>7.1</b> Datos De Panel</a><ul>
+<li class="chapter" data-level="7.1.1" data-path="pool-de-datos-en-panel-y-matrices-de-transicion.html"><a href="pool-de-datos-en-panel-y-matrices-de-transicion.html#introduccion-1"><i class="fa fa-check"></i><b>7.1.1</b> Introducción</a></li>
+<li class="chapter" data-level="7.1.2" data-path="pool-de-datos-en-panel-y-matrices-de-transicion.html"><a href="pool-de-datos-en-panel-y-matrices-de-transicion.html#pasos-para-la-construccion-del-panel"><i class="fa fa-check"></i><b>7.1.2</b> Pasos para la construccion del Panel</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="pool-de-datos-en-panel-y-matrices-de-transicion.html"><a href="pool-de-datos-en-panel-y-matrices-de-transicion.html#matrices-de-transicion"><i class="fa fa-check"></i><b>7.2</b> Matrices de transición</a><ul>
+<li class="chapter" data-level="7.2.1" data-path="pool-de-datos-en-panel-y-matrices-de-transicion.html"><a href="pool-de-datos-en-panel-y-matrices-de-transicion.html#calculo-de-probabilidades-de-transicion."><i class="fa fa-check"></i><b>7.2.1</b> Calculo de probabilidades de transición.</a></li>
+<li class="chapter" data-level="7.2.2" data-path="pool-de-datos-en-panel-y-matrices-de-transicion.html"><a href="pool-de-datos-en-panel-y-matrices-de-transicion.html#grafico-de-matriz-de-transicion"><i class="fa fa-check"></i><b>7.2.2</b> Gráfico de Matriz de Transición</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="tidyverse-y-tasas-basicas-del-mercado-de-trabajo.html"><a href="tidyverse-y-tasas-basicas-del-mercado-de-trabajo.html#ejercicios-para-practicar-1"><i class="fa fa-check"></i><b>7.3</b> Ejercicios Para prácticar</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="rmarkdown.html"><a href="rmarkdown.html"><i class="fa fa-check"></i><b>8</b> RMarkdown</a><ul>
+<li class="chapter" data-level="8.1" data-path="rmarkdown.html"><a href="rmarkdown.html#introduccion-2"><i class="fa fa-check"></i><b>8.1</b> Introducción</a></li>
+<li class="chapter" data-level="8.2" data-path="rmarkdown.html"><a href="rmarkdown.html#organizacion-de-los-datos"><i class="fa fa-check"></i><b>8.2</b> Organización de los datos</a></li>
+<li class="chapter" data-level="8.3" data-path="rmarkdown.html"><a href="rmarkdown.html#tasas-basicas-de-mercado-de-trabajo"><i class="fa fa-check"></i><b>8.3</b> Tasas básicas de Mercado de trabajo</a></li>
+<li class="chapter" data-level="8.4" data-path="rmarkdown.html"><a href="rmarkdown.html#empleo-no-registrado"><i class="fa fa-check"></i><b>8.4</b> Empleo no registrado</a></li>
+<li class="chapter" data-level="8.5" data-path="rmarkdown.html"><a href="rmarkdown.html#brechas-de-ingresos"><i class="fa fa-check"></i><b>8.5</b> Brechas de ingresos</a><ul>
+<li class="chapter" data-level="8.5.1" data-path="rmarkdown.html"><a href="rmarkdown.html#brecha-de-ingresos-totales-mensuales"><i class="fa fa-check"></i><b>8.5.1</b> Brecha de ingresos totales mensuales</a></li>
+<li class="chapter" data-level="8.5.2" data-path="rmarkdown.html"><a href="rmarkdown.html#brecha-de-ingresos-mensuales-por-nivel-educativo"><i class="fa fa-check"></i><b>8.5.2</b> Brecha de ingresos mensuales por nivel educativo</a></li>
+<li class="chapter" data-level="8.5.3" data-path="rmarkdown.html"><a href="rmarkdown.html#brecha-de-ingresos-mensuales-y-horarios-por-nivel-educativo"><i class="fa fa-check"></i><b>8.5.3</b> Brecha de ingresos mensuales y horarios por nivel educativo</a></li>
+</ul></li>
+<li class="chapter" data-level="8.6" data-path="rmarkdown.html"><a href="rmarkdown.html#horas-semanales-trabajadas"><i class="fa fa-check"></i><b>8.6</b> Horas semanales trabajadas</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="programacion-funcional.html"><a href="programacion-funcional.html"><i class="fa fa-check"></i><b>9</b> Programacion Funcional</a><ul>
+<li class="chapter" data-level="9.1" data-path="programacion-funcional.html"><a href="programacion-funcional.html#loops"><i class="fa fa-check"></i><b>9.1</b> Loops</a></li>
+<li class="chapter" data-level="9.2" data-path="programacion-funcional.html"><a href="programacion-funcional.html#estructuras-condicionales"><i class="fa fa-check"></i><b>9.2</b> Estructuras Condicionales</a><ul>
+<li class="chapter" data-level="9.2.1" data-path="programacion-funcional.html"><a href="programacion-funcional.html#if"><i class="fa fa-check"></i><b>9.2.1</b> if</a></li>
+<li class="chapter" data-level="9.2.2" data-path="programacion-funcional.html"><a href="programacion-funcional.html#ifelse"><i class="fa fa-check"></i><b>9.2.2</b> ifelse</a></li>
+</ul></li>
+<li class="chapter" data-level="9.3" data-path="programacion-funcional.html"><a href="programacion-funcional.html#funciones-1"><i class="fa fa-check"></i><b>9.3</b> Funciones</a></li>
+<li class="chapter" data-level="9.4" data-path="programacion-funcional.html"><a href="programacion-funcional.html#purrr"><i class="fa fa-check"></i><b>9.4</b> PURRR</a><ul>
+<li class="chapter" data-level="9.4.1" data-path="programacion-funcional.html"><a href="programacion-funcional.html#iterando-en-la-eph"><i class="fa fa-check"></i><b>9.4.1</b> Iterando en la EPH</a></li>
+</ul></li>
+<li class="chapter" data-level="9.5" data-path="programacion-funcional.html"><a href="programacion-funcional.html#ejemplo.-regresion-lineal"><i class="fa fa-check"></i><b>9.5</b> Ejemplo. Regresión lineal</a><ul>
+<li class="chapter" data-level="9.5.1" data-path="programacion-funcional.html"><a href="programacion-funcional.html#loopeando"><i class="fa fa-check"></i><b>9.5.1</b> Loopeando</a></li>
+<li class="chapter" data-level="9.5.2" data-path="programacion-funcional.html"><a href="programacion-funcional.html#usando-map"><i class="fa fa-check"></i><b>9.5.2</b> Usando MAP</a></li>
+<li class="chapter" data-level="9.5.3" data-path="programacion-funcional.html"><a href="programacion-funcional.html#walk"><i class="fa fa-check"></i><b>9.5.3</b> Walk</a></li>
+<li class="chapter" data-level="9.5.4" data-path="programacion-funcional.html"><a href="programacion-funcional.html#discusion."><i class="fa fa-check"></i><b>9.5.4</b> Discusión.</a></li>
+</ul></li>
+<li class="chapter" data-level="9.6" data-path="programacion-funcional.html"><a href="programacion-funcional.html#lectura-y-escritura-de-archivos-intermedia"><i class="fa fa-check"></i><b>9.6</b> Lectura y escritura de archivos intermedia</a><ul>
+<li class="chapter" data-level="9.6.1" data-path="programacion-funcional.html"><a href="programacion-funcional.html#rdata"><i class="fa fa-check"></i><b>9.6.1</b> RData</a></li>
+<li class="chapter" data-level="9.6.2" data-path="programacion-funcional.html"><a href="programacion-funcional.html#rds"><i class="fa fa-check"></i><b>9.6.2</b> RDS</a></li>
+<li class="chapter" data-level="9.6.3" data-path="programacion-funcional.html"><a href="programacion-funcional.html#spss-stata-sas"><i class="fa fa-check"></i><b>9.6.3</b> SPSS, STATA, SAS</a></li>
+<li class="chapter" data-level="9.6.4" data-path="programacion-funcional.html"><a href="programacion-funcional.html#encoding"><i class="fa fa-check"></i><b>9.6.4</b> Encoding</a></li>
+</ul></li>
+<li class="chapter" data-level="9.7" data-path="programacion-funcional.html"><a href="programacion-funcional.html#ayudas"><i class="fa fa-check"></i><b>9.7</b> Ayudas</a></li>
+<li class="chapter" data-level="9.8" data-path="programacion-funcional.html"><a href="programacion-funcional.html#ejercicios-para-practicar-2"><i class="fa fa-check"></i><b>9.8</b> Ejercicios para practicar</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Introducción a R para Ciencias Sociales. Aplicación practica en la EPH</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="header">
+<h1 class="title">Introducción a R para Ciencias Sociales. Aplicación practica en la EPH</h1>
+<p class="author"><em>Pablo Tiscornia - Guido Weksler - Diego Kozlowski - Natsumi Shokida.</em></p>
+</div>
+<div id="introduccion" class="section level1">
+<h1><span class="header-section-number">1</span> Introducción</h1>
+<div id="presentacion" class="section level2">
+<h2><span class="header-section-number">1.1</span> Presentación</h2>
+<p>En los últimos años se han difundido muchas herramientas estadísticas novedosas para el análisis de información socioeconómica. En particular el software denominado “R”, por tratarse de un software libre, se extiende cada vez más en diferentes disciplinas y recibe el aporte de investigadores e investigadoras en todo el mundo, multiplicando sistemáticamente sus capacidades.</p>
+<p>Este programa se destaca, entre varias cosas, por su capacidad de trabajar con grandes volúmenes de información, utilizar múltiples bases de datos en simultáneo, generar reportes, realizar gráficos a nivel de publicación y por su comunidad de usuarios y usuarias que publican sus sintaxis y comparten sus problemas, hecho que potencia la capacidad de consulta y de crecimiento. A su vez, la expresividad del lenguaje permite diseñar funciones específicas que permiten optimizar de forma personalizada el trabajo cotidiano con R.</p>
+<hr />
+</div>
+<div id="objetivos-del-curso" class="section level2">
+<h2><span class="header-section-number">1.2</span> Objetivos del curso</h2>
+<p>El presente Taller tiene como objetivo principal introducirse en el aprendizaje del lenguaje de programación “R” aplicado procesamiento de la Encuesta Permanente de Hogares (EPH) - INDEC. Se apunta a brindar a los y las participantes herramientas prácticas para el procesamiento de datos haciendo énfasis en la producción y el análisis de estadísticas socioeconómicas en pos de abrir puertas para realizar investigaciones propias sobre diversas temáticas relacionadas al mercado de trabajo y las condiciones de vida de la población.</p>
+<p>La Encuesta Permanente de Hogares será la base de datos de aplicación elegida para el curso, dado que representa un insumo fundamental para realizar estudios sobre el mercado de trabajo y las condiciones de vida de la población. Se hará una introducción a los lineamientos conceptuales principales de la encuesta, en pos de que los y las participantes puedan abordar con datos distintas problemáticas vinculadas al mercado de trabajo y las condiciones de vida de la población.</p>
+<hr />
+</div>
+<div id="clases-y-contenido" class="section level2">
+<h2><span class="header-section-number">1.3</span> Clases y contenido</h2>
+<p><strong>Clase 1 - Conceptos Principales de EPH.</strong></p>
+<ul>
+<li>Temas de clase:
+<ul>
+<li>Presentación del curso.</li>
+<li>Presentación de la Encuesta Permanente de Hogares: Lineamientos conceptuales y metodología</li>
+<li>Abordaje del marco teórico y analítico de la EPH y sus aplicaciones prácticas.</li>
+<li>Síntesis del operativo de campo, cobertura y periodicidad de la Encuesta</li>
+<li>Definiciones de las principales variables de interés a abordar en el curso: Condición de actividad, categoría ocupacional, precariedad y pobreza</li>
+<li>Metodología usuaria de las Bases de microdatos. Utilización del Diseño de Registro.</li>
+</ul></li>
+</ul>
+<p><strong>Clase 2 – Introduciendo a R.</strong></p>
+<ul>
+<li>Temas de clase:
+<ul>
+<li>Descripción del programa “R”. Lógica sintáctica del lenguaje y comandos básicos</li>
+<li>Presentación de la plataforma RStudio para trabajar en “R”</li>
+<li>Caracteres especiales en “R”</li>
+<li>Operadores lógicos y aritméticos</li>
+<li>Definición de Objetos: Valores, Vectores y DataFrames</li>
+<li>Tipos de variable (numérica, de caracteres, lógicas)</li>
+<li>Lectura y Escritura de Archivos</li>
+</ul></li>
+</ul>
+<p><strong>Clase 3 – Trabajando con bases de datos y Mercado de Trabajo.</strong></p>
+<ul>
+<li>Temas de clase:
+<ul>
+<li>Limpieza de Base de datos: Renombrar y recodificar variables, tratamiento de valores faltantes (missing values/ NA´s)</li>
+<li>Seleccionar variables, ordenar y agrupar la base de datos para realizar cálculos</li>
+<li>Creación de nuevas variables</li>
+<li>Aplicar filtros sobre la base de datos</li>
+<li>Construir medidas de resumen de la información</li>
+<li>Tratamiento de variables numéricas (edad, ingresos, horas de trabajo, cantidad de hijos / componentes del hogar, entre otras).</li>
+<li>Ejercicios prácticos para aplicar lo expuesto: Replicar Informe Técnico de Mercado de Trabajo (EPH-INDEC)</li>
+<li>Cálculo de tasas básicas del mercado de trabajo (tasa de actividad, empleo, desempleo, entre otras)</li>
+<li>Cálculo de tasas para distintos subconjuntos poblacionales (por aglomerado, sexo, grupos de edad)</li>
+</ul></li>
+</ul>
+<p><strong>Clase 4: Cálculo de tasas de Pobreza e Indigencia.</strong></p>
+<ul>
+<li>Temas de clase:
+<ul>
+<li>Definición de la Canasta Básica Alimentaria y Canasta Básica Total</li>
+<li>Metodología del cálculo de pobreza por línea (para personas y hogares)</li>
+<li>Ejercicio de estimación de tasas de Pobreza e Indigencia</li>
+<li>Ejercicio de estimación de tasas de Pobreza e Indigencia para subgrupos poblacionales (Género, Edad, Regiones)</li>
+</ul></li>
+</ul>
+<p><strong>Clase 5 - Variables de ingresos y gráficos.</strong></p>
+<ul>
+<li>Temas de clase:
+<ul>
+<li>Procesamiento de indicadores agregados sobre las variables de ingresos (Ingresos laborales, no laborales, de ocupación principal, total familiar)</li>
+<li>Gráficos básicos de R (función “plot”): Comandos para la visualización ágil de la información</li>
+<li>Gráficos elaborados en R (función “ggplot”):
+<ul>
+<li>Gráficos de línea, barras, Boxplots y distribuciones de densidad</li>
+<li>Parámetros de los gráficos: Leyendas, ejes, títulos, notas, colores</li>
+<li>Gráficos con múltiples cruces de variables.</li>
+</ul></li>
+</ul></li>
+</ul>
+<p><strong>Clase 6: Pool de Datos en Panel. Gráficos y Matrices de Transición.</strong></p>
+<ul>
+<li>Temas de clase:
+<ul>
+<li>Metodología de trabajos en panel con EPH: (Esquema de rotación de la EPH, Variables para la identificación de los individuos en distintos períodos, Consistencias)</li>
+<li>Proceso para la construcción de paneles en R.</li>
+<li>Cálculo de Frecuencias de transiciones de estados (Categorías Ocupacionales, Situaciones de Pobreza/Indigencia)</li>
+<li>Gráficos de Transición de estados</li>
+</ul></li>
+</ul>
+<p><strong>Clase 7: Documentación en R. Generación de reportes/informes.</strong></p>
+<ul>
+<li>Temas de clase:
+<ul>
+<li>Manejo de las extensiones del software “Rmarkdown” y “RNotebook” para elaborar documentos de trabajo, presentaciones interactivas e informes:
+<ul>
+<li>Opciones para mostrar u ocultar código en los reportes</li>
+<li>Definición de tamaño, títulos y formato con el cual se despliegan los gráficos y tablas en el informe</li>
+<li>Caracteres especiales para incluir múltiples recursos en el texto del informe: Links a páginas web, notas al pie, enumeraciones, cambios en el formato de letra (tamaño, negrita, cursiva)</li>
+<li>Código embebido en el texto para automatización de reportes</li>
+</ul></li>
+</ul></li>
+</ul>
+<p><strong>Clase 8: Introducción a R Intermedio</strong></p>
+<ul>
+<li>Temas de clase:
+<ul>
+<li>Acercamiento a técnicas más sofisticadas en R, útiles para automatizar el procesamiento periódico de la información:
+<ul>
+<li>Estructuras de código condicionales</li>
+<li>Loops</li>
+<li>Creación de funciones a medida del usuario</li>
+</ul></li>
+<li>Herramientas para continuar el aprendizaje en R: Foros reconocidos de usuarios de R. Comunidades donde se comparten conocimientos, experiencias, consultas. Comandos para acceder a los documentos de ayuda.</li>
+</ul></li>
+</ul>
+<p><strong>Clase 9: Trabajos prácticos: R en concreto / examen</strong></p>
+<ul>
+<li>Se presentará a los/as alumnos/as problemas concretos vinculados a la EPH y en relación a las experiencias que se fueron volcando a lo largo de la cursada. Se deberán abordar mediante el uso de R, aplicando lo aprendido en los módulos anteriores. En conjunto se expondrán los desafíos que emergen en el momento y la evaluación de las herramientas adecuadas para su abordaje y resolución. Entre los temas giran aquellos vinculados a la distribución personal del ingreso/Construcción de percentiles de ingreso; el mercado laboral a través de la herramienta Panel de datos; la documentación en R (Estilo de Notas de Clase).</li>
+<li>Espacio para consultas puntuales sobre los temas vistos durante el curso y presentación del trabajo final a entregar.</li>
+</ul>
+</div>
+<div id="librerias-a-instalar" class="section level2">
+<h2><span class="header-section-number">1.4</span> Librerias a instalar</h2>
+<pre><code>install.packages(c(&quot;tidyverse&quot;,&quot;openxlsx&quot;,&#39;ggplot2&#39;,&#39;ggthemes&#39;, &#39;ggrepel&#39;,&#39;ggalt&#39;,&#39;kableExtra&#39;,&#39;GGally&#39;,&#39;ggridges&#39;,&#39;fs&#39;,&#39;purrr&#39;,&#39;rmarkdown&#39;))</code></pre>
+<!-- If you need PDF output, uncomment bookdown::pdf_book above in YAML. You will need a LaTeX installation, e.g., https://yihui.name/tinytex/ -->
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+
+<a href="conceptos-principales-de-eph.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

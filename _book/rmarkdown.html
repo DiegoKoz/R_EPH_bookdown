@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>8 RMarkdown | Introducción a R para Ciencias Sociales. Aplicación practica en la EPH</title>
+  <meta name="description" content="8 RMarkdown | Introducción a R para Ciencias Sociales. Aplicación practica en la EPH">
+  <meta name="generator" content="bookdown  and GitBook 2.6.7">
+
+  <meta property="og:title" content="8 RMarkdown | Introducción a R para Ciencias Sociales. Aplicación practica en la EPH" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="8 RMarkdown | Introducción a R para Ciencias Sociales. Aplicación practica en la EPH" />
+  
+  
+  
+
+<meta name="author" content="Pablo Tiscornia - Guido Weksler - Diego Kozlowski - Natsumi Shokida.">
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="pool-de-datos-en-panel-y-matrices-de-transicion.html">
+<link rel="next" href="programacion-funcional.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introducción</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#presentacion"><i class="fa fa-check"></i><b>1.1</b> Presentación</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#objetivos-del-curso"><i class="fa fa-check"></i><b>1.2</b> Objetivos del curso</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#clases-y-contenido"><i class="fa fa-check"></i><b>1.3</b> Clases y contenido</a></li>
+<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#librerias-a-instalar"><i class="fa fa-check"></i><b>1.4</b> Librerias a instalar</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="conceptos-principales-de-eph.html"><a href="conceptos-principales-de-eph.html"><i class="fa fa-check"></i><b>2</b> Conceptos Principales de EPH</a><ul>
+<li class="chapter" data-level="2.1" data-path="conceptos-principales-de-eph.html"><a href="conceptos-principales-de-eph.html#que-es-la-eph"><i class="fa fa-check"></i><b>2.1</b> ¿Qué es la EPH?</a></li>
+<li class="chapter" data-level="2.2" data-path="conceptos-principales-de-eph.html"><a href="conceptos-principales-de-eph.html#traduzcamos"><i class="fa fa-check"></i><b>2.2</b> Traduzcamos</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="conceptos-principales-de-eph.html"><a href="conceptos-principales-de-eph.html#objetivos-de-la-eph"><i class="fa fa-check"></i><b>2.2.1</b> Objetivos de la EPH</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="conceptos-principales-de-eph.html"><a href="conceptos-principales-de-eph.html#caracteristicas-de-la-eph"><i class="fa fa-check"></i><b>2.3</b> Características de la EPH</a></li>
+<li class="chapter" data-level="2.4" data-path="conceptos-principales-de-eph.html"><a href="conceptos-principales-de-eph.html#la-muestra"><i class="fa fa-check"></i><b>2.4</b> La Muestra</a><ul>
+<li class="chapter" data-level="2.4.1" data-path="conceptos-principales-de-eph.html"><a href="conceptos-principales-de-eph.html#principales-tematicas-abordadas-por-la-eph"><i class="fa fa-check"></i><b>2.4.1</b> Principales temáticas abordadas por la EPH</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="conceptos-principales-de-eph.html"><a href="conceptos-principales-de-eph.html#instrumento-de-medicion-el-medio-hacia-la-operacionalizacion-de-los-objetivos"><i class="fa fa-check"></i><b>2.5</b> Instrumento de medición: El medio hacia la operacionalización de los objetivos</a></li>
+<li class="chapter" data-level="2.6" data-path="conceptos-principales-de-eph.html"><a href="conceptos-principales-de-eph.html#tres-cuestionarios"><i class="fa fa-check"></i><b>2.6</b> Tres cuestionarios</a><ul>
+<li class="chapter" data-level="2.6.1" data-path="conceptos-principales-de-eph.html"><a href="conceptos-principales-de-eph.html#cuestionario-de-vivienda"><i class="fa fa-check"></i><b>2.6.1</b> Cuestionario de vivienda</a></li>
+<li class="chapter" data-level="2.6.2" data-path="conceptos-principales-de-eph.html"><a href="conceptos-principales-de-eph.html#cuestionario-de-hogar"><i class="fa fa-check"></i><b>2.6.2</b> Cuestionario de hogar</a></li>
+</ul></li>
+<li class="chapter" data-level="2.7" data-path="conceptos-principales-de-eph.html"><a href="conceptos-principales-de-eph.html#marco-analitico-y-tematico-de-la-eph"><i class="fa fa-check"></i><b>2.7</b> Marco analítico y temático de la EPH</a><ul>
+<li class="chapter" data-level="2.7.1" data-path="conceptos-principales-de-eph.html"><a href="conceptos-principales-de-eph.html#cuestionario-de-individuos"><i class="fa fa-check"></i><b>2.7.1</b> Cuestionario de individuos</a></li>
+</ul></li>
+<li class="chapter" data-level="2.8" data-path="conceptos-principales-de-eph.html"><a href="conceptos-principales-de-eph.html#cuestinario-individual-principales-indicadores"><i class="fa fa-check"></i><b>2.8</b> Cuestinario individual: Principales indicadores</a></li>
+<li class="chapter" data-level="2.9" data-path="conceptos-principales-de-eph.html"><a href="conceptos-principales-de-eph.html#caracterizacion-de-la-poblacion-ocupada"><i class="fa fa-check"></i><b>2.9</b> Caracterización de la población ocupada</a><ul>
+<li class="chapter" data-level="2.9.1" data-path="conceptos-principales-de-eph.html"><a href="conceptos-principales-de-eph.html#otros-indicadores-para-describir-a-la-poblacion-ocupada"><i class="fa fa-check"></i><b>2.9.1</b> Otros indicadores para describir a la población ocupada</a></li>
+<li class="chapter" data-level="2.9.2" data-path="conceptos-principales-de-eph.html"><a href="conceptos-principales-de-eph.html#caracterizacion-de-la-poblacion-desocupada"><i class="fa fa-check"></i><b>2.9.2</b> Caracterízación de la población desocupada</a></li>
+<li class="chapter" data-level="2.9.3" data-path="conceptos-principales-de-eph.html"><a href="conceptos-principales-de-eph.html#clasificadores-utilizados-en-la-eph-rama-de-actividad-y-tarea-ocupacion"><i class="fa fa-check"></i><b>2.9.3</b> Clasificadores utilizados en la EPH (Rama de actividad y Tarea / Ocupación)</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="introduccion-a-r.html"><a href="introduccion-a-r.html"><i class="fa fa-check"></i><b>3</b> Introducción a R</a><ul>
+<li class="chapter" data-level="3.0.1" data-path="introduccion-a-r.html"><a href="introduccion-a-r.html#que-es-r"><i class="fa fa-check"></i><b>3.0.1</b> ¿Que es R?</a></li>
+<li class="chapter" data-level="3.0.2" data-path="introduccion-a-r.html"><a href="introduccion-a-r.html#diferencias-con-stata-y-spss"><i class="fa fa-check"></i><b>3.0.2</b> Diferencias con STATA y SPSS</a></li>
+<li class="chapter" data-level="3.1" data-path="introduccion-a-r.html"><a href="introduccion-a-r.html#logica-sintactica."><i class="fa fa-check"></i><b>3.1</b> Lógica sintáctica.</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="introduccion-a-r.html"><a href="introduccion-a-r.html#definicion-de-objetos"><i class="fa fa-check"></i><b>3.1.1</b> Definición de objetos</a></li>
+<li class="chapter" data-level="3.1.2" data-path="introduccion-a-r.html"><a href="introduccion-a-r.html#r-base"><i class="fa fa-check"></i><b>3.1.2</b> R base</a></li>
+<li class="chapter" data-level="3.1.3" data-path="introduccion-a-r.html"><a href="introduccion-a-r.html#data-frames"><i class="fa fa-check"></i><b>3.1.3</b> Data Frames</a></li>
+<li class="chapter" data-level="3.1.4" data-path="introduccion-a-r.html"><a href="introduccion-a-r.html#listas"><i class="fa fa-check"></i><b>3.1.4</b> Listas</a></li>
+<li class="chapter" data-level="3.1.5" data-path="introduccion-a-r.html"><a href="introduccion-a-r.html#instalacion-de-paquetes-complementarios-al-r-base"><i class="fa fa-check"></i><b>3.1.5</b> Instalación de paquetes complementarios al R Base</a></li>
+<li class="chapter" data-level="3.1.6" data-path="introduccion-a-r.html"><a href="introduccion-a-r.html#lectura-y-escritura-de-archivos"><i class="fa fa-check"></i><b>3.1.6</b> Lectura y escritura de archivos</a></li>
+<li class="chapter" data-level="3.1.7" data-path="introduccion-a-r.html"><a href="introduccion-a-r.html#ambientes-de-trabajo"><i class="fa fa-check"></i><b>3.1.7</b> Ambientes de trabajo</a></li>
+<li class="chapter" data-level="3.1.8" data-path="introduccion-a-r.html"><a href="introduccion-a-r.html#paquetes-a-utilizar-a-lo-largo-del-curso"><i class="fa fa-check"></i><b>3.1.8</b> Paquetes a utilizar a lo largo del curso:</a></li>
+<li class="chapter" data-level="3.1.9" data-path="introduccion-a-r.html"><a href="introduccion-a-r.html#ejercicios-para-practicar"><i class="fa fa-check"></i><b>3.1.9</b> Ejercicios para practicar</a></li>
+<li class="chapter" data-level="3.1.10" data-path="introduccion-a-r.html"><a href="introduccion-a-r.html#ejercicios-de-tarea"><i class="fa fa-check"></i><b>3.1.10</b> Ejercicios de tarea</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="tidyverse-y-tasas-basicas-del-mercado-de-trabajo.html"><a href="tidyverse-y-tasas-basicas-del-mercado-de-trabajo.html"><i class="fa fa-check"></i><b>4</b> Tidyverse y Tasas básicas del Mercado de Trabajo</a><ul>
+<li class="chapter" data-level="4.1" data-path="tidyverse-y-tasas-basicas-del-mercado-de-trabajo.html"><a href="tidyverse-y-tasas-basicas-del-mercado-de-trabajo.html#estructuracion-de-bases-de-datos"><i class="fa fa-check"></i><b>4.1</b> Estructuración de Bases de Datos</a></li>
+<li class="chapter" data-level="4.2" data-path="tidyverse-y-tasas-basicas-del-mercado-de-trabajo.html"><a href="tidyverse-y-tasas-basicas-del-mercado-de-trabajo.html#dplyr"><i class="fa fa-check"></i><b>4.2</b> Dplyr</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="tidyverse-y-tasas-basicas-del-mercado-de-trabajo.html"><a href="tidyverse-y-tasas-basicas-del-mercado-de-trabajo.html#filter"><i class="fa fa-check"></i><b>4.2.1</b> filter</a></li>
+<li class="chapter" data-level="4.2.2" data-path="tidyverse-y-tasas-basicas-del-mercado-de-trabajo.html"><a href="tidyverse-y-tasas-basicas-del-mercado-de-trabajo.html#rename"><i class="fa fa-check"></i><b>4.2.2</b> rename</a></li>
+<li class="chapter" data-level="4.2.3" data-path="tidyverse-y-tasas-basicas-del-mercado-de-trabajo.html"><a href="tidyverse-y-tasas-basicas-del-mercado-de-trabajo.html#mutate"><i class="fa fa-check"></i><b>4.2.3</b> mutate</a></li>
+<li class="chapter" data-level="4.2.4" data-path="tidyverse-y-tasas-basicas-del-mercado-de-trabajo.html"><a href="tidyverse-y-tasas-basicas-del-mercado-de-trabajo.html#case_when"><i class="fa fa-check"></i><b>4.2.4</b> case_when</a></li>
+<li class="chapter" data-level="4.2.5" data-path="tidyverse-y-tasas-basicas-del-mercado-de-trabajo.html"><a href="tidyverse-y-tasas-basicas-del-mercado-de-trabajo.html#select"><i class="fa fa-check"></i><b>4.2.5</b> select</a></li>
+<li class="chapter" data-level="4.2.6" data-path="tidyverse-y-tasas-basicas-del-mercado-de-trabajo.html"><a href="tidyverse-y-tasas-basicas-del-mercado-de-trabajo.html#arrange"><i class="fa fa-check"></i><b>4.2.6</b> arrange</a></li>
+<li class="chapter" data-level="4.2.7" data-path="tidyverse-y-tasas-basicas-del-mercado-de-trabajo.html"><a href="tidyverse-y-tasas-basicas-del-mercado-de-trabajo.html#summarise"><i class="fa fa-check"></i><b>4.2.7</b> summarise</a></li>
+<li class="chapter" data-level="4.2.8" data-path="tidyverse-y-tasas-basicas-del-mercado-de-trabajo.html"><a href="tidyverse-y-tasas-basicas-del-mercado-de-trabajo.html#group_by"><i class="fa fa-check"></i><b>4.2.8</b> group_by</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="tidyverse-y-tasas-basicas-del-mercado-de-trabajo.html"><a href="tidyverse-y-tasas-basicas-del-mercado-de-trabajo.html#joins"><i class="fa fa-check"></i><b>4.3</b> Joins</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="tidyverse-y-tasas-basicas-del-mercado-de-trabajo.html"><a href="tidyverse-y-tasas-basicas-del-mercado-de-trabajo.html#left_join"><i class="fa fa-check"></i><b>4.3.1</b> left_join</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="tidyverse-y-tasas-basicas-del-mercado-de-trabajo.html"><a href="tidyverse-y-tasas-basicas-del-mercado-de-trabajo.html#tidyr"><i class="fa fa-check"></i><b>4.4</b> Tidyr</a><ul>
+<li class="chapter" data-level="4.4.1" data-path="tidyverse-y-tasas-basicas-del-mercado-de-trabajo.html"><a href="tidyverse-y-tasas-basicas-del-mercado-de-trabajo.html#gather-y-spread"><i class="fa fa-check"></i><b>4.4.1</b> Gather y Spread</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="tidyverse-y-tasas-basicas-del-mercado-de-trabajo.html"><a href="tidyverse-y-tasas-basicas-del-mercado-de-trabajo.html#tasas-del-mercado-de-trabajo"><i class="fa fa-check"></i><b>4.5</b> Tasas del Mercado de Trabajo</a><ul>
+<li class="chapter" data-level="4.5.1" data-path="tidyverse-y-tasas-basicas-del-mercado-de-trabajo.html"><a href="tidyverse-y-tasas-basicas-del-mercado-de-trabajo.html#tasa-de-empleo"><i class="fa fa-check"></i><b>4.5.1</b> Tasa de Empleo</a></li>
+<li class="chapter" data-level="4.5.2" data-path="tidyverse-y-tasas-basicas-del-mercado-de-trabajo.html"><a href="tidyverse-y-tasas-basicas-del-mercado-de-trabajo.html#tasas-basicas---total-aglomerados"><i class="fa fa-check"></i><b>4.5.2</b> Tásas Básicas - Total Aglomerados</a></li>
+<li class="chapter" data-level="4.5.3" data-path="tidyverse-y-tasas-basicas-del-mercado-de-trabajo.html"><a href="tidyverse-y-tasas-basicas-del-mercado-de-trabajo.html#tasas-basicas-por-aglomerado"><i class="fa fa-check"></i><b>4.5.3</b> Tásas Básicas por Aglomerado</a></li>
+<li class="chapter" data-level="4.5.4" data-path="tidyverse-y-tasas-basicas-del-mercado-de-trabajo.html"><a href="tidyverse-y-tasas-basicas-del-mercado-de-trabajo.html#ejercicio-para-2-trimestres"><i class="fa fa-check"></i><b>4.5.4</b> Ejercicio para 2 trimestres</a></li>
+</ul></li>
+<li class="chapter" data-level="4.6" data-path="tidyverse-y-tasas-basicas-del-mercado-de-trabajo.html"><a href="tidyverse-y-tasas-basicas-del-mercado-de-trabajo.html#ejercicios-para-practicar-1"><i class="fa fa-check"></i><b>4.6</b> Ejercicios para practicar</a><ul>
+<li class="chapter" data-level="4.6.1" data-path="tidyverse-y-tasas-basicas-del-mercado-de-trabajo.html"><a href="tidyverse-y-tasas-basicas-del-mercado-de-trabajo.html#ejercicios-de-tarea-1"><i class="fa fa-check"></i><b>4.6.1</b> Ejercicios de tarea</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="calculo-de-pobreza-por-linea.html"><a href="calculo-de-pobreza-por-linea.html"><i class="fa fa-check"></i><b>5</b> Cálculo de Pobreza por Línea</a><ul>
+<li class="chapter" data-level="5.1" data-path="calculo-de-pobreza-por-linea.html"><a href="calculo-de-pobreza-por-linea.html#canastas-trimestrales-por-region"><i class="fa fa-check"></i><b>5.1</b> Canastas Trimestrales por Region</a></li>
+<li class="chapter" data-level="5.2" data-path="calculo-de-pobreza-por-linea.html"><a href="calculo-de-pobreza-por-linea.html#unidades-de-adulto-equivalente-por-hogar-en-la-base-individual"><i class="fa fa-check"></i><b>5.2</b> Unidades de Adulto Equivalente por hogar en la base Individual</a></li>
+<li class="chapter" data-level="5.3" data-path="calculo-de-pobreza-por-linea.html"><a href="calculo-de-pobreza-por-linea.html#calculo-de-tasas-de-pobreza-e-indigencia"><i class="fa fa-check"></i><b>5.3</b> Cálculo de Tasas de Pobreza e Indigencia</a></li>
+<li class="chapter" data-level="5.4" data-path="introduccion-a-r.html"><a href="introduccion-a-r.html#ejercicios-para-practicar"><i class="fa fa-check"></i><b>5.4</b> Ejercicios Para prácticar</a></li>
+<li class="chapter" data-level="5.5" data-path="calculo-de-pobreza-por-linea.html"><a href="calculo-de-pobreza-por-linea.html#ejercicios-de-tarea-2"><i class="fa fa-check"></i><b>5.5</b> Ejercicios de tarea</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="graficos-y-distribucion-del-ingreso.html"><a href="graficos-y-distribucion-del-ingreso.html"><i class="fa fa-check"></i><b>6</b> Gráficos y Distribución del Ingreso</a><ul>
+<li class="chapter" data-level="6.1" data-path="graficos-y-distribucion-del-ingreso.html"><a href="graficos-y-distribucion-del-ingreso.html#graficos-basicos-en-r"><i class="fa fa-check"></i><b>6.1</b> Gráficos Básicos en R</a><ul>
+<li class="chapter" data-level="6.1.1" data-path="graficos-y-distribucion-del-ingreso.html"><a href="graficos-y-distribucion-del-ingreso.html#png"><i class="fa fa-check"></i><b>6.1.1</b> png</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="graficos-y-distribucion-del-ingreso.html"><a href="graficos-y-distribucion-del-ingreso.html#ggplot2"><i class="fa fa-check"></i><b>6.2</b> <span>Ggplot2</span></a><ul>
+<li class="chapter" data-level="6.2.1" data-path="graficos-y-distribucion-del-ingreso.html"><a href="graficos-y-distribucion-del-ingreso.html#grafico-de-puntos"><i class="fa fa-check"></i><b>6.2.1</b> Gráfico de Puntos</a></li>
+<li class="chapter" data-level="6.2.2" data-path="graficos-y-distribucion-del-ingreso.html"><a href="graficos-y-distribucion-del-ingreso.html#extensiones-de-ggplot."><i class="fa fa-check"></i><b>6.2.2</b> Extensiones de <span>GGplot</span>.</a></li>
+</ul></li>
+<li class="chapter" data-level="6.3" data-path="graficos-y-distribucion-del-ingreso.html"><a href="graficos-y-distribucion-del-ingreso.html#graficos-ingresos---eph"><i class="fa fa-check"></i><b>6.3</b> Graficos Ingresos - EPH</a><ul>
+<li class="chapter" data-level="6.3.1" data-path="graficos-y-distribucion-del-ingreso.html"><a href="graficos-y-distribucion-del-ingreso.html#ingreso-de-la-ocupacion-principal"><i class="fa fa-check"></i><b>6.3.1</b> Ingreso de la ocupación principal</a></li>
+<li class="chapter" data-level="6.3.2" data-path="graficos-y-distribucion-del-ingreso.html"><a href="graficos-y-distribucion-del-ingreso.html#distribucion-de-los-ingresos-laborales-y-no-laborales-por-sexo"><i class="fa fa-check"></i><b>6.3.2</b> Distribución de los ingresos laborales y no laborales por sexo</a></li>
+<li class="chapter" data-level="6.3.3" data-path="graficos-y-distribucion-del-ingreso.html"><a href="graficos-y-distribucion-del-ingreso.html#otros-graficos"><i class="fa fa-check"></i><b>6.3.3</b> Otros gráficos</a></li>
+</ul></li>
+<li class="chapter" data-level="6.4" data-path="graficos-y-distribucion-del-ingreso.html"><a href="graficos-y-distribucion-del-ingreso.html#ejercicios"><i class="fa fa-check"></i><b>6.4</b> Ejercicios</a><ul>
+<li class="chapter" data-level="6.4.1" data-path="graficos-y-distribucion-del-ingreso.html"><a href="graficos-y-distribucion-del-ingreso.html#para-practicar"><i class="fa fa-check"></i><b>6.4.1</b> Para practicar</a></li>
+<li class="chapter" data-level="6.4.2" data-path="graficos-y-distribucion-del-ingreso.html"><a href="graficos-y-distribucion-del-ingreso.html#de-tarea"><i class="fa fa-check"></i><b>6.4.2</b> De tarea</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="pool-de-datos-en-panel-y-matrices-de-transicion.html"><a href="pool-de-datos-en-panel-y-matrices-de-transicion.html"><i class="fa fa-check"></i><b>7</b> Pool de Datos en Panel y Matrices de Transición</a><ul>
+<li class="chapter" data-level="7.1" data-path="pool-de-datos-en-panel-y-matrices-de-transicion.html"><a href="pool-de-datos-en-panel-y-matrices-de-transicion.html#datos-de-panel"><i class="fa fa-check"></i><b>7.1</b> Datos De Panel</a><ul>
+<li class="chapter" data-level="7.1.1" data-path="pool-de-datos-en-panel-y-matrices-de-transicion.html"><a href="pool-de-datos-en-panel-y-matrices-de-transicion.html#introduccion-1"><i class="fa fa-check"></i><b>7.1.1</b> Introducción</a></li>
+<li class="chapter" data-level="7.1.2" data-path="pool-de-datos-en-panel-y-matrices-de-transicion.html"><a href="pool-de-datos-en-panel-y-matrices-de-transicion.html#pasos-para-la-construccion-del-panel"><i class="fa fa-check"></i><b>7.1.2</b> Pasos para la construccion del Panel</a></li>
+</ul></li>
+<li class="chapter" data-level="7.2" data-path="pool-de-datos-en-panel-y-matrices-de-transicion.html"><a href="pool-de-datos-en-panel-y-matrices-de-transicion.html#matrices-de-transicion"><i class="fa fa-check"></i><b>7.2</b> Matrices de transición</a><ul>
+<li class="chapter" data-level="7.2.1" data-path="pool-de-datos-en-panel-y-matrices-de-transicion.html"><a href="pool-de-datos-en-panel-y-matrices-de-transicion.html#calculo-de-probabilidades-de-transicion."><i class="fa fa-check"></i><b>7.2.1</b> Calculo de probabilidades de transición.</a></li>
+<li class="chapter" data-level="7.2.2" data-path="pool-de-datos-en-panel-y-matrices-de-transicion.html"><a href="pool-de-datos-en-panel-y-matrices-de-transicion.html#grafico-de-matriz-de-transicion"><i class="fa fa-check"></i><b>7.2.2</b> Gráfico de Matriz de Transición</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="tidyverse-y-tasas-basicas-del-mercado-de-trabajo.html"><a href="tidyverse-y-tasas-basicas-del-mercado-de-trabajo.html#ejercicios-para-practicar-1"><i class="fa fa-check"></i><b>7.3</b> Ejercicios Para prácticar</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="rmarkdown.html"><a href="rmarkdown.html"><i class="fa fa-check"></i><b>8</b> RMarkdown</a><ul>
+<li class="chapter" data-level="8.1" data-path="rmarkdown.html"><a href="rmarkdown.html#introduccion-2"><i class="fa fa-check"></i><b>8.1</b> Introducción</a></li>
+<li class="chapter" data-level="8.2" data-path="rmarkdown.html"><a href="rmarkdown.html#organizacion-de-los-datos"><i class="fa fa-check"></i><b>8.2</b> Organización de los datos</a></li>
+<li class="chapter" data-level="8.3" data-path="rmarkdown.html"><a href="rmarkdown.html#tasas-basicas-de-mercado-de-trabajo"><i class="fa fa-check"></i><b>8.3</b> Tasas básicas de Mercado de trabajo</a></li>
+<li class="chapter" data-level="8.4" data-path="rmarkdown.html"><a href="rmarkdown.html#empleo-no-registrado"><i class="fa fa-check"></i><b>8.4</b> Empleo no registrado</a></li>
+<li class="chapter" data-level="8.5" data-path="rmarkdown.html"><a href="rmarkdown.html#brechas-de-ingresos"><i class="fa fa-check"></i><b>8.5</b> Brechas de ingresos</a><ul>
+<li class="chapter" data-level="8.5.1" data-path="rmarkdown.html"><a href="rmarkdown.html#brecha-de-ingresos-totales-mensuales"><i class="fa fa-check"></i><b>8.5.1</b> Brecha de ingresos totales mensuales</a></li>
+<li class="chapter" data-level="8.5.2" data-path="rmarkdown.html"><a href="rmarkdown.html#brecha-de-ingresos-mensuales-por-nivel-educativo"><i class="fa fa-check"></i><b>8.5.2</b> Brecha de ingresos mensuales por nivel educativo</a></li>
+<li class="chapter" data-level="8.5.3" data-path="rmarkdown.html"><a href="rmarkdown.html#brecha-de-ingresos-mensuales-y-horarios-por-nivel-educativo"><i class="fa fa-check"></i><b>8.5.3</b> Brecha de ingresos mensuales y horarios por nivel educativo</a></li>
+</ul></li>
+<li class="chapter" data-level="8.6" data-path="rmarkdown.html"><a href="rmarkdown.html#horas-semanales-trabajadas"><i class="fa fa-check"></i><b>8.6</b> Horas semanales trabajadas</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="programacion-funcional.html"><a href="programacion-funcional.html"><i class="fa fa-check"></i><b>9</b> Programacion Funcional</a><ul>
+<li class="chapter" data-level="9.1" data-path="programacion-funcional.html"><a href="programacion-funcional.html#loops"><i class="fa fa-check"></i><b>9.1</b> Loops</a></li>
+<li class="chapter" data-level="9.2" data-path="programacion-funcional.html"><a href="programacion-funcional.html#estructuras-condicionales"><i class="fa fa-check"></i><b>9.2</b> Estructuras Condicionales</a><ul>
+<li class="chapter" data-level="9.2.1" data-path="programacion-funcional.html"><a href="programacion-funcional.html#if"><i class="fa fa-check"></i><b>9.2.1</b> if</a></li>
+<li class="chapter" data-level="9.2.2" data-path="programacion-funcional.html"><a href="programacion-funcional.html#ifelse"><i class="fa fa-check"></i><b>9.2.2</b> ifelse</a></li>
+</ul></li>
+<li class="chapter" data-level="9.3" data-path="programacion-funcional.html"><a href="programacion-funcional.html#funciones-1"><i class="fa fa-check"></i><b>9.3</b> Funciones</a></li>
+<li class="chapter" data-level="9.4" data-path="programacion-funcional.html"><a href="programacion-funcional.html#purrr"><i class="fa fa-check"></i><b>9.4</b> PURRR</a><ul>
+<li class="chapter" data-level="9.4.1" data-path="programacion-funcional.html"><a href="programacion-funcional.html#iterando-en-la-eph"><i class="fa fa-check"></i><b>9.4.1</b> Iterando en la EPH</a></li>
+</ul></li>
+<li class="chapter" data-level="9.5" data-path="programacion-funcional.html"><a href="programacion-funcional.html#ejemplo.-regresion-lineal"><i class="fa fa-check"></i><b>9.5</b> Ejemplo. Regresión lineal</a><ul>
+<li class="chapter" data-level="9.5.1" data-path="programacion-funcional.html"><a href="programacion-funcional.html#loopeando"><i class="fa fa-check"></i><b>9.5.1</b> Loopeando</a></li>
+<li class="chapter" data-level="9.5.2" data-path="programacion-funcional.html"><a href="programacion-funcional.html#usando-map"><i class="fa fa-check"></i><b>9.5.2</b> Usando MAP</a></li>
+<li class="chapter" data-level="9.5.3" data-path="programacion-funcional.html"><a href="programacion-funcional.html#walk"><i class="fa fa-check"></i><b>9.5.3</b> Walk</a></li>
+<li class="chapter" data-level="9.5.4" data-path="programacion-funcional.html"><a href="programacion-funcional.html#discusion."><i class="fa fa-check"></i><b>9.5.4</b> Discusión.</a></li>
+</ul></li>
+<li class="chapter" data-level="9.6" data-path="programacion-funcional.html"><a href="programacion-funcional.html#lectura-y-escritura-de-archivos-intermedia"><i class="fa fa-check"></i><b>9.6</b> Lectura y escritura de archivos intermedia</a><ul>
+<li class="chapter" data-level="9.6.1" data-path="programacion-funcional.html"><a href="programacion-funcional.html#rdata"><i class="fa fa-check"></i><b>9.6.1</b> RData</a></li>
+<li class="chapter" data-level="9.6.2" data-path="programacion-funcional.html"><a href="programacion-funcional.html#rds"><i class="fa fa-check"></i><b>9.6.2</b> RDS</a></li>
+<li class="chapter" data-level="9.6.3" data-path="programacion-funcional.html"><a href="programacion-funcional.html#spss-stata-sas"><i class="fa fa-check"></i><b>9.6.3</b> SPSS, STATA, SAS</a></li>
+<li class="chapter" data-level="9.6.4" data-path="programacion-funcional.html"><a href="programacion-funcional.html#encoding"><i class="fa fa-check"></i><b>9.6.4</b> Encoding</a></li>
+</ul></li>
+<li class="chapter" data-level="9.7" data-path="programacion-funcional.html"><a href="programacion-funcional.html#ayudas"><i class="fa fa-check"></i><b>9.7</b> Ayudas</a></li>
+<li class="chapter" data-level="9.8" data-path="programacion-funcional.html"><a href="programacion-funcional.html#ejercicios-para-practicar-2"><i class="fa fa-check"></i><b>9.8</b> Ejercicios para practicar</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Introducción a R para Ciencias Sociales. Aplicación practica en la EPH</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="rmarkdown" class="section level1">
+<h1><span class="header-section-number">8</span> RMarkdown</h1>
+<div id="introduccion-2" class="section level2">
+<h2><span class="header-section-number">8.1</span> Introducción</h2>
+<p>El objetivo de esta clase es comenzar a trabajar utilizando los formatos RNotebook y/o RMarkdown para realizar reportes compilados directamente en RStudio, de forma tal que nuestro trabajo pueda quedar documentado y ser fácilmente compartido con otras personas.</p>
+<p>Mientras que en la clase presencial trabajamos bajo la modalidad de <em>código en vivo</em>, en las presentes notas de clase se replican los ejercicios propuestos.</p>
+<blockquote>
+<p>En lugar de abrir un R Script, en esta ocasión abriremos un nuevo documento del tipo R Notebook o R Markdown.</p>
+</blockquote>
+<p>Cargamos la librería <em>tidyverse</em> con la cual trabajaremos para procesar la información</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(tidyverse)</code></pre>
+<p>Asentamos en la variable <em>date</em> el trimestre correspondiente a la información utilizada.</p>
+<pre class="sourceCode r"><code class="sourceCode r">date &lt;-<span class="st"> &quot;1er trimestre 2017&quot;</span></code></pre>
+<p>De esta forma, cuando presentemos los resultados de nuestro análisis, podremos contar automáticamente con las etiquetas para los cuadros, gráficos y comentarios. Por ejemplo:</p>
+<blockquote>
+<p><strong>Todos los datos refieren a los 31 aglomerados urbanos relevados en la EPH y en esta ocasión corresponden al 1er trimestre 2017.</strong></p>
+</blockquote>
+</div>
+<div id="organizacion-de-los-datos" class="section level2">
+<h2><span class="header-section-number">8.2</span> Organización de los datos</h2>
+<p>Cargamos la base individual del 1er trimestre 2017.</p>
+<pre class="sourceCode r"><code class="sourceCode r">base_individual &lt;-<span class="st"> </span><span class="kw">read.table</span>(<span class="st">&quot;Fuentes/usu_individual_t117.txt&quot;</span>, <span class="dt">sep=</span><span class="st">&quot;;&quot;</span>, <span class="dt">dec=</span><span class="st">&quot;,&quot;</span>, <span class="dt">header =</span> <span class="ot">TRUE</span>, <span class="dt">fill =</span> <span class="ot">TRUE</span>)</code></pre>
+<p>Modificamos la variable <em>CH04</em> de la base de datos, de forma tal que se llame <em>Sexo</em> y contenga los valores <em>Varones</em> y <em>Mujeres</em>. De este modo los resultados se presentarán de forma más amena a su lectura.</p>
+<pre class="sourceCode r"><code class="sourceCode r">base_individual &lt;-<span class="st"> </span>base_individual <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">mutate</span>(<span class="dt">Sexo =</span> <span class="kw">as.character</span>(CH04),
+         <span class="dt">Sexo =</span> <span class="kw">case_when</span>(Sexo<span class="op">==</span><span class="st">&quot;1&quot;</span> <span class="op">~</span><span class="st"> &quot;Varones&quot;</span>,
+                          Sexo<span class="op">==</span><span class="st">&quot;2&quot;</span> <span class="op">~</span><span class="st"> &quot;Mujeres&quot;</span>))</code></pre>
+<p>Construimos la variable <em>NIVEL_EDUCATIVO</em>, colapsando sus categorías en cuatro niveles.</p>
+<pre class="sourceCode r"><code class="sourceCode r">base_individual &lt;-<span class="st"> </span>base_individual <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">mutate</span>(<span class="dt">NIVEL_EDUCATIVO =</span> <span class="kw">case_when</span>(NIVEL_ED <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">7</span>) <span class="op">~</span><span class="st"> &quot;Sin Instrucción&quot;,</span>
+<span class="st">                                     NIVEL_ED %in% c(2, 3) ~ &quot;</span>Primaria<span class="st">&quot;,</span>
+<span class="st">                                     NIVEL_ED %in% c(4, 5) ~ &quot;</span>Secundaria<span class="st">&quot;,</span>
+<span class="st">                                     NIVEL_ED == 6         ~ &quot;</span>Superior<span class="st">&quot;,</span>
+<span class="st">                                     NIVEL_ED == 9         ~ &quot;</span>NS<span class="op">/</span>NR<span class="st">&quot;),</span>
+<span class="st">         NIVEL_EDUCATIVO = factor(NIVEL_EDUCATIVO, </span>
+<span class="st">                                  levels = c(&quot;</span>Sin Instrucción&quot;, 
+                                             <span class="st">&quot;Primaria&quot;</span>, 
+                                             <span class="st">&quot;Secundaria&quot;</span>, 
+                                             <span class="st">&quot;Superior&quot;</span>))<span class="er">)</span></code></pre>
+</div>
+<div id="tasas-basicas-de-mercado-de-trabajo" class="section level2">
+<h2><span class="header-section-number">8.3</span> Tasas básicas de Mercado de trabajo</h2>
+<p>En esta instancia realizamos un ejercicio similar a los ya presentados en el curso. Calculamos las tasas de Actividad, Empleo y Desocupación, pero para cada uno de los sexos.</p>
+<blockquote>
+<p>Si queremos mostrar la tabla resultante, debemos configurar el <em>chunk</em> de código de forma tal que el output sea “Show output only” (en caso de querer ocultar las líneas de código), o “Show code and output” (en caso de querer compartir también el código).</p>
+</blockquote>
+<pre class="sourceCode r"><code class="sourceCode r">tabla1<span class="fl">.1</span> &lt;-<span class="st"> </span>base_individual <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">filter</span>(CH06 <span class="op">&gt;=</span><span class="st"> </span><span class="dv">14</span>) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">group_by</span>(Sexo) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">summarise</span>(<span class="dt">Poblacion         =</span> <span class="kw">sum</span>(PONDERA),
+            <span class="dt">Ocupados          =</span> <span class="kw">sum</span>(PONDERA[ESTADO <span class="op">==</span><span class="st"> </span><span class="dv">1</span>]),
+            <span class="dt">Desocupados       =</span> <span class="kw">sum</span>(PONDERA[ESTADO <span class="op">==</span><span class="st"> </span><span class="dv">2</span>]),
+            <span class="dt">PEA               =</span> Ocupados <span class="op">+</span><span class="st"> </span>Desocupados,
+            <span class="st">&#39;Tasa Actividad&#39;</span>    =<span class="st"> </span><span class="kw">round</span>(PEA<span class="op">/</span>Poblacion<span class="op">*</span><span class="dv">100</span>, <span class="dv">1</span>),
+            <span class="st">&#39;Tasa Empleo&#39;</span>       =<span class="st"> </span><span class="kw">round</span>(Ocupados<span class="op">/</span>Poblacion<span class="op">*</span><span class="dv">100</span>, <span class="dv">1</span>),
+            <span class="st">&#39;Tasa Desocupación&#39; = round(Desocupados/PEA*100, 1)) %&gt;% </span>
+<span class="st">  select(-c(2:5)) %&gt;% </span>
+<span class="st">  gather(Indicadores, Valor, 2:4) %&gt;% </span>
+<span class="st">  spread(., Sexo, Valor)</span>
+
+<span class="st">tabla1.1</span></code></pre>
+<pre><code>## # A tibble: 3 x 3
+##   Indicadores       Mujeres Varones
+##   &lt;chr&gt;               &lt;dbl&gt;   &lt;dbl&gt;
+## 1 Tasa Actividad       46.1    69.6
+## 2 Tasa Desocupación    10.2     8.5
+## 3 Tasa Empleo          41.4    63.7</code></pre>
+<p>Lo mismo sucede en el caso de los gráficos:</p>
+<p><strong>Gráfico 1.</strong> <em>Población de 14 años y más. Tasas de Actividad y de Empleo por sexo. Total de aglomerados urbanos. 1er trimestre 2017.</em></p>
+<pre class="sourceCode r"><code class="sourceCode r">tabla1<span class="fl">.2</span>_graf &lt;-<span class="st"> </span>tabla1<span class="fl">.1</span> <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">filter</span>(Indicadores <span class="op">%in%</span><span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Tasa Actividad&quot;</span>, <span class="st">&quot;Tasa Empleo&quot;</span>)) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">gather</span>(., Sexo, porcentaje, <span class="dv">2</span><span class="op">:</span><span class="dv">3</span>)
+
+<span class="kw">ggplot</span>(tabla1<span class="fl">.2</span>_graf, 
+       <span class="kw">aes</span>(<span class="dt">x =</span> <span class="st">&#39;&#39;</span>, porcentaje, 
+           <span class="dt">fill =</span> Sexo, 
+           <span class="dt">group=</span> Sexo, 
+           <span class="dt">label =</span> <span class="kw">paste0</span>(porcentaje, <span class="st">&quot;%&quot;</span>))) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_col</span>(<span class="dt">position =</span> <span class="st">&quot;dodge&quot;</span>) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_text</span>(<span class="dt">position =</span> <span class="kw">position_dodge</span>(<span class="dt">width =</span> <span class="fl">.9</span>), <span class="dt">vjust =</span><span class="dv">2</span>, <span class="dt">size =</span> <span class="dv">6</span>) <span class="op">+</span>
+<span class="st">  </span><span class="kw">theme_void</span>() <span class="op">+</span>
+<span class="st">  </span><span class="kw">facet_grid</span>(<span class="op">~</span>Indicadores) <span class="op">+</span>
+<span class="st">  </span><span class="kw">labs</span>(<span class="dt">caption =</span> <span class="st">&quot;Fuente: Elaboración propia en base a EPH-INDEC&quot;</span>)</code></pre>
+<p><img src="_main_files/figure-html/unnamed-chunk-124-1.png" width="672" /></p>
+</div>
+<div id="empleo-no-registrado" class="section level2">
+<h2><span class="header-section-number">8.4</span> Empleo no registrado</h2>
+<p>Calculamos a continuación la tasa de empleo no registrado en el caso de las asalariadas mujeres y de los asalariados varones.</p>
+<pre class="sourceCode r"><code class="sourceCode r">tabla2<span class="fl">.1</span> &lt;-<span class="st"> </span>base_individual <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">filter</span>(ESTADO<span class="op">==</span><span class="dv">1</span>,
+         CAT_OCUP<span class="op">==</span><span class="dv">3</span>) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">group_by</span>(Sexo) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">summarise</span>(<span class="st">&quot;Proporción de no Registrados&quot;</span> =
+<span class="st">              </span><span class="kw">round</span>(<span class="kw">sum</span>(PONDERA[PP07H<span class="op">==</span><span class="dv">2</span>])<span class="op">/</span><span class="kw">sum</span>(PONDERA)<span class="op">*</span><span class="dv">100</span>, <span class="dv">1</span>))
+
+inline_<span class="dv">1</span> &lt;-<span class="st"> </span>tabla2<span class="fl">.1</span><span class="op">$</span><span class="st">`</span><span class="dt">Proporción de no Registrados</span><span class="st">`</span>[tabla2<span class="fl">.1</span><span class="op">$</span>Sexo <span class="op">==</span><span class="st"> &quot;Mujeres&quot;</span>]
+inline_<span class="dv">2</span> &lt;-<span class="st"> </span>tabla2<span class="fl">.1</span><span class="op">$</span><span class="st">`</span><span class="dt">Proporción de no Registrados</span><span class="st">`</span>[tabla2<span class="fl">.1</span><span class="op">$</span>Sexo <span class="op">==</span><span class="st"> &quot;Varones&quot;</span>]
+
+tabla2<span class="fl">.1</span></code></pre>
+<pre><code>## # A tibble: 2 x 2
+##   Sexo    `Proporción de no Registrados`
+##   &lt;chr&gt;                            &lt;dbl&gt;
+## 1 Mujeres                           35.1
+## 2 Varones                           31.9</code></pre>
+<p>Hay un 35.1% de las asalariadas a quienes sus empleadores no inscriben en la seguridad social, mientras que para los asalariados varones esta tasa de no registro es del 31.9%.</p>
+</div>
+<div id="brechas-de-ingresos" class="section level2">
+<h2><span class="header-section-number">8.5</span> Brechas de ingresos</h2>
+<div id="brecha-de-ingresos-totales-mensuales" class="section level3">
+<h3><span class="header-section-number">8.5.1</span> Brecha de ingresos totales mensuales</h3>
+<pre class="sourceCode r"><code class="sourceCode r">tabla3<span class="fl">.1</span> &lt;-<span class="st"> </span>base_individual <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">filter</span>(P47T <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span>) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">group_by</span>(Sexo) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">summarise</span>(<span class="dt">Media.ITI =</span> <span class="kw">round</span>(<span class="kw">weighted.mean</span>(P47T, PONDII), <span class="dv">1</span>)) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">spread</span>(., Sexo, Media.ITI) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">mutate</span>(<span class="st">&quot;Brecha del Ingreso Total Individual&quot;</span> =<span class="st"> </span><span class="kw">round</span>(((Varones<span class="op">-</span>Mujeres)<span class="op">/</span>Varones)<span class="op">*</span><span class="dv">100</span>, <span class="dv">1</span>))
+
+inline_<span class="dv">3</span> &lt;-<span class="st"> </span>tabla3<span class="fl">.1</span><span class="op">$</span><span class="st">`</span><span class="dt">Brecha del Ingreso Total Individual</span><span class="st">`</span>
+
+tabla3<span class="fl">.1</span></code></pre>
+<pre><code>## # A tibble: 1 x 3
+##   Mujeres Varones `Brecha del Ingreso Total Individual`
+##     &lt;dbl&gt;   &lt;dbl&gt;                                 &lt;dbl&gt;
+## 1  10708.  14687.                                  27.1</code></pre>
+<p>Observando los ingresos totales individuales de toda la población, se observa que la brecha entre varones y mujeres en este caso es de 27.1 puntos porcentuales. Es decir, contemplando todos los ingresos que se perciben, sean de origen laboral o no laboral (como jubilaciones y pensiones, cuotas alimentarias, subsidios, etc.), las mujeres perciben ingresos que, en promedio, son un 27.1% menores que los de los varones.</p>
+<div id="ejercicio-calcular-la-brecha-de-ingresos-mensuales-de-lasos-ocupadasos" class="section level4">
+<h4><span class="header-section-number">8.5.1.1</span> Ejercicio: Calcular la brecha de ingresos mensuales de las/os ocupadas/os</h4>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Resolución</span>
+
+tabla4<span class="fl">.1</span> &lt;-<span class="st"> </span>base_individual <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">filter</span>(ESTADO <span class="op">==</span><span class="st"> </span><span class="dv">1</span>) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">group_by</span>(Sexo) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">summarise</span>(<span class="dt">Media.IOP =</span> <span class="kw">round</span>(<span class="kw">weighted.mean</span>(P21, PONDIIO), <span class="dv">1</span>)) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">spread</span>(., Sexo, Media.IOP) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">mutate</span>(<span class="st">&quot;Brecha de ingresos de la ocup. princ.&quot;</span> =<span class="st"> </span><span class="kw">round</span>(((Varones<span class="op">-</span>Mujeres)<span class="op">/</span>Varones)<span class="op">*</span><span class="dv">100</span>, <span class="dv">1</span>))
+
+inline_<span class="dv">4</span> &lt;-<span class="st"> </span>tabla4<span class="fl">.1</span><span class="op">$</span><span class="st">`</span><span class="dt">Brecha de ingresos de la ocupación principal</span><span class="st">`</span>
+inline_<span class="dv">5</span> &lt;-<span class="st"> </span>tabla4<span class="fl">.1</span><span class="op">$</span><span class="st">`</span><span class="dt">Media de ingresos de las Mujeres</span><span class="st">`</span>
+inline_<span class="dv">6</span> &lt;-<span class="st"> </span>tabla4<span class="fl">.1</span><span class="op">$</span><span class="st">`</span><span class="dt">Media de ingresos de los Varones</span><span class="st">`</span>
+
+tabla4<span class="fl">.1</span></code></pre>
+<pre><code>## # A tibble: 1 x 3
+##   Mujeres Varones `Brecha de ingresos de la ocup. princ.`
+##     &lt;dbl&gt;   &lt;dbl&gt;                                   &lt;dbl&gt;
+## 1    9965  13218.                                    24.6</code></pre>
+<p>Simultáneamente, en el mercado de trabajo, las mujeres ganan en promedio un % menos que los varones ( vs. ). Estos datos corresponden a la totalidad de ocupadas/os, cualquiera sea su categoría ocupacional, calificación o jerarquía, y observando en este caso los ingresos provenientes de la ocupación principal.</p>
+</div>
+</div>
+<div id="brecha-de-ingresos-mensuales-por-nivel-educativo" class="section level3">
+<h3><span class="header-section-number">8.5.2</span> Brecha de ingresos mensuales por nivel educativo</h3>
+<p>Antes de calcular la brecha de los ingresos mensuales para cada nivel educativo, veremos la distribución que presenta cada uno de los sexos respecto de esta variable.</p>
+<pre class="sourceCode r"><code class="sourceCode r">tabla5<span class="fl">.1</span> &lt;-<span class="st"> </span>base_individual <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">filter</span>(ESTADO <span class="op">==</span><span class="st"> </span><span class="dv">1</span>, <span class="op">!</span><span class="kw">is.na</span>(NIVEL_EDUCATIVO)) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">group_by</span>(Sexo) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">mutate</span>(<span class="dt">Frecuencia =</span> <span class="kw">sum</span>(PONDERA)) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">group_by</span>(Sexo, NIVEL_EDUCATIVO) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">summarise</span>(<span class="dt">Tasa =</span> <span class="kw">round</span>(<span class="kw">sum</span>(PONDERA)<span class="op">/</span><span class="kw">unique</span>(Frecuencia)<span class="op">*</span><span class="dv">100</span>, <span class="dv">1</span>)) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">spread</span>(., Sexo, Tasa) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">rename</span>(<span class="st">&quot;Nivel Educativo&quot;</span> =<span class="st"> </span>NIVEL_EDUCATIVO, <span class="st">&quot;% de Mujeres&quot;</span> =<span class="st"> </span>Mujeres, <span class="st">&quot;% de Varones&quot;</span> =<span class="st"> </span>Varones)
+
+tabla5<span class="fl">.1</span></code></pre>
+<pre><code>## # A tibble: 4 x 3
+##   `Nivel Educativo` `% de Mujeres` `% de Varones`
+##   &lt;fct&gt;                      &lt;dbl&gt;          &lt;dbl&gt;
+## 1 Sin Instrucción              3.6            5.1
+## 2 Primaria                    23.4           37.2
+## 3 Secundaria                  41.6           41.1
+## 4 Superior                    31.4           16.5</code></pre>
+<p>Calculamos el promedio de ingresos mensuales y horarios para cada combinación de <em>Sexo</em> y <em>NIVELEDUCATIVO</em>.</p>
+<pre class="sourceCode r"><code class="sourceCode r">tabla5<span class="fl">.2</span> &lt;-<span class="st"> </span>base_individual <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">filter</span>(ESTADO <span class="op">==</span><span class="st"> </span><span class="dv">1</span>, 
+         PP3E_TOT <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span>,
+         PP3E_TOT <span class="op">!=</span><span class="st"> </span><span class="dv">999</span>,
+         <span class="op">!</span><span class="kw">is.na</span>(NIVEL_EDUCATIVO)) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">group_by</span>(Sexo, NIVEL_EDUCATIVO) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">summarise</span>(<span class="dt">IOP_hr =</span> <span class="kw">round</span>(<span class="kw">weighted.mean</span>(P21<span class="op">/</span>(PP3E_TOT <span class="op">*</span><span class="st"> </span><span class="dv">30</span> <span class="op">/</span><span class="st"> </span><span class="dv">7</span>), PONDIIO), <span class="dv">2</span>),
+            <span class="dt">IOP_mensual  =</span> <span class="kw">round</span>(<span class="kw">weighted.mean</span>(P21, PONDIIO), <span class="dv">2</span>)) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">arrange</span>(NIVEL_EDUCATIVO, Sexo)</code></pre>
+</div>
+<div id="brecha-de-ingresos-mensuales-y-horarios-por-nivel-educativo" class="section level3">
+<h3><span class="header-section-number">8.5.3</span> Brecha de ingresos mensuales y horarios por nivel educativo</h3>
+<p>Presentamos los ingresos promedios y la brecha correspondientes a los ingresos mensuales.</p>
+<pre class="sourceCode r"><code class="sourceCode r">tabla5.<span class="fl">2.1</span> &lt;-<span class="st"> </span>tabla5<span class="fl">.2</span> <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">select</span>(<span class="op">-</span>IOP_hr) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">spread</span>(., Sexo, IOP_mensual) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">mutate</span>(<span class="dt">brecha =</span> <span class="kw">paste0</span>(<span class="kw">round</span>((Varones<span class="op">-</span>Mujeres)<span class="op">/</span>Varones<span class="op">*</span><span class="dv">100</span>, <span class="dv">1</span>), <span class="st">&quot;%&quot;</span>))
+
+tabla5.<span class="fl">2.1</span></code></pre>
+<pre><code>## # A tibble: 4 x 4
+##   NIVEL_EDUCATIVO Mujeres Varones brecha
+##   &lt;fct&gt;             &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt; 
+## 1 Sin Instrucción   5030.   8640. 41.8% 
+## 2 Primaria          5853.   9969. 41.3% 
+## 3 Secundaria        9025.  13505  33.2% 
+## 4 Superior         15369.  21135. 27.3%</code></pre>
+<p>Presentamos los datos de montos y brecha correspondientes al ingreso por horas de las/os ocupadas/os, de acuerdo a su sexo y nivel educativo.</p>
+<pre class="sourceCode r"><code class="sourceCode r">tabla5.<span class="fl">2.2</span> &lt;-<span class="st"> </span>tabla5<span class="fl">.2</span> <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">select</span>(<span class="op">-</span>IOP_mensual) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">spread</span>(., Sexo, IOP_hr) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">mutate</span>(<span class="dt">brecha =</span> <span class="kw">paste0</span>(<span class="kw">round</span>((Varones<span class="op">-</span>Mujeres)<span class="op">/</span>Varones<span class="op">*</span><span class="dv">100</span>, <span class="dv">1</span>), <span class="st">&quot;%&quot;</span>))
+
+tabla5.<span class="fl">2.2</span></code></pre>
+<pre><code>## # A tibble: 4 x 4
+##   NIVEL_EDUCATIVO Mujeres Varones brecha
+##   &lt;fct&gt;             &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt; 
+## 1 Sin Instrucción    46.0    54.8 16.1% 
+## 2 Primaria           54.6    58.9 7.2%  
+## 3 Secundaria         68.9    79.3 13.1% 
+## 4 Superior          118.    134.  12%</code></pre>
+</div>
+</div>
+<div id="horas-semanales-trabajadas" class="section level2">
+<h2><span class="header-section-number">8.6</span> Horas semanales trabajadas</h2>
+<p>Finalmente, podemos indagar sobre los determinantes de la diferencia entre las brechas de ingresos mensuales y las brechas de ingresos horarios. Para eso, podemos ver la diferencia entre las horas que ofrecen los varones y las mujeres semanalmente en el mercado de trabajo.</p>
+<pre class="sourceCode r"><code class="sourceCode r">horas &lt;-<span class="st"> </span>base_individual <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">filter</span>(ESTADO <span class="op">==</span><span class="st"> </span><span class="dv">1</span>, 
+         PP3E_TOT <span class="op">&gt;</span><span class="st"> </span><span class="dv">0</span>,
+         PP3E_TOT <span class="op">!=</span><span class="st"> </span><span class="dv">999</span>) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">group_by</span>(Sexo) <span class="op">%&gt;%</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">summarise</span>(<span class="st">&quot;Horas semanales trabajadas&quot;</span> =<span class="st"> </span>
+<span class="st">              </span><span class="kw">round</span>(<span class="kw">weighted.mean</span>(PP3E_TOT, PONDIIO), <span class="dv">2</span>))
+
+horas</code></pre>
+<pre><code>## # A tibble: 2 x 2
+##   Sexo    `Horas semanales trabajadas`
+##   &lt;chr&gt;                          &lt;dbl&gt;
+## 1 Mujeres                         32.6
+## 2 Varones                         42.1</code></pre>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="pool-de-datos-en-panel-y-matrices-de-transicion.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="programacion-funcional.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

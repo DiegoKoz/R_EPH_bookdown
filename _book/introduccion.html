@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Introducción a R para Ciencias Sociales. Aplicación practica en la EPH</title>
+  <meta name="description" content="Introducción a R para Ciencias Sociales. Aplicación practica en la EPH">
+  <meta name="generator" content="bookdown  and GitBook 2.6.7">
+
+  <meta property="og:title" content="Introducción a R para Ciencias Sociales. Aplicación practica en la EPH" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Introducción a R para Ciencias Sociales. Aplicación practica en la EPH" />
+  
+  
+  
+
+<meta name="author" content="Diego Kozlowski, Guido Weksler, Pablo Tiscornia, Natsumi Shokida">
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="0.0.1" data-path="01-introduccion.html"><a href="#presentacion"><i class="fa fa-check"></i><b>0.0.1</b> Presentación</a></li>
+<li class="chapter" data-level="0.0.2" data-path="01-introduccion.html"><a href="#objetivos-del-curso"><i class="fa fa-check"></i><b>0.0.2</b> Objetivos del curso</a></li>
+<li class="chapter" data-level="0.0.3" data-path="01-introduccion.html"><a href="#clases-y-contenido"><i class="fa fa-check"></i><b>0.0.3</b> Clases y contenido</a></li>
+<li class="chapter" data-level="1" data-path="01-introduccion.html"><a href="#introduccion"><i class="fa fa-check"></i><b>1</b> Introducción</a><ul>
+<li class="chapter" data-level="1.1" data-path="01-introduccion.html"><a href="#que-es-la-eph"><i class="fa fa-check"></i><b>1.1</b> ¿Qué es la EPH?</a></li>
+<li class="chapter" data-level="1.2" data-path="01-introduccion.html"><a href="#traduzcamos"><i class="fa fa-check"></i><b>1.2</b> Traduzcamos</a><ul>
+<li class="chapter" data-level="1.2.1" data-path="01-introduccion.html"><a href="#objetivos-de-la-eph"><i class="fa fa-check"></i><b>1.2.1</b> Objetivos de la EPH</a></li>
+</ul></li>
+<li class="chapter" data-level="1.3" data-path="01-introduccion.html"><a href="#caracteristicas-de-la-eph"><i class="fa fa-check"></i><b>1.3</b> Características de la EPH</a></li>
+<li class="chapter" data-level="1.4" data-path="01-introduccion.html"><a href="#la-muestra"><i class="fa fa-check"></i><b>1.4</b> La Muestra</a><ul>
+<li class="chapter" data-level="1.4.1" data-path="01-introduccion.html"><a href="#principales-tematicas-abordadas-por-la-eph"><i class="fa fa-check"></i><b>1.4.1</b> Principales temáticas abordadas por la EPH</a></li>
+</ul></li>
+<li class="chapter" data-level="1.5" data-path="01-introduccion.html"><a href="#instrumento-de-medicion-el-medio-hacia-la-operacionalizacion-de-los-objetivos"><i class="fa fa-check"></i><b>1.5</b> Instrumento de medición: El medio hacia la operacionalización de los objetivos</a></li>
+<li class="chapter" data-level="1.6" data-path="01-introduccion.html"><a href="#tres-cuestionarios"><i class="fa fa-check"></i><b>1.6</b> Tres cuestionarios</a><ul>
+<li class="chapter" data-level="1.6.1" data-path="01-introduccion.html"><a href="#cuestionario-de-vivienda"><i class="fa fa-check"></i><b>1.6.1</b> Cuestionario de vivienda</a></li>
+<li class="chapter" data-level="1.6.2" data-path="01-introduccion.html"><a href="#cuestionario-de-hogar"><i class="fa fa-check"></i><b>1.6.2</b> Cuestionario de hogar</a></li>
+</ul></li>
+<li class="chapter" data-level="1.7" data-path="01-introduccion.html"><a href="#marco-analitico-y-tematico-de-la-eph"><i class="fa fa-check"></i><b>1.7</b> Marco analítico y temático de la EPH</a><ul>
+<li class="chapter" data-level="1.7.1" data-path="01-introduccion.html"><a href="#cuestionario-de-individuos"><i class="fa fa-check"></i><b>1.7.1</b> Cuestionario de individuos</a></li>
+</ul></li>
+<li class="chapter" data-level="1.8" data-path="01-introduccion.html"><a href="#cuestinario-individual-principales-indicadores"><i class="fa fa-check"></i><b>1.8</b> Cuestinario individual: Principales indicadores</a></li>
+<li class="chapter" data-level="1.9" data-path="01-introduccion.html"><a href="#caracterizacion-de-la-poblacion-ocupada"><i class="fa fa-check"></i><b>1.9</b> Caracterización de la población ocupada</a><ul>
+<li class="chapter" data-level="1.9.1" data-path="01-introduccion.html"><a href="#otros-indicadores-para-describir-a-la-poblacion-ocupada"><i class="fa fa-check"></i><b>1.9.1</b> Otros indicadores para describir a la población ocupada</a></li>
+<li class="chapter" data-level="1.9.2" data-path="01-introduccion.html"><a href="#caracterizacion-de-la-poblacion-desocupada"><i class="fa fa-check"></i><b>1.9.2</b> Caracterízación de la población desocupada</a></li>
+<li class="chapter" data-level="1.9.3" data-path="01-introduccion.html"><a href="#clasificadores-utilizados-en-la-eph-rama-de-actividad-y-tarea-ocupacion"><i class="fa fa-check"></i><b>1.9.3</b> Clasificadores utilizados en la EPH (Rama de actividad y Tarea / Ocupación)</a></li>
+</ul></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Introducción a R para Ciencias Sociales. Aplicación practica en la EPH</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="header">
+<h1 class="title">Introducción a R para Ciencias Sociales. Aplicación practica en la EPH</h1>
+<p class="author"><em>Diego Kozlowski, Guido Weksler, Pablo Tiscornia, Natsumi Shokida</em></p>
+</div>
+<div id="introduccion" class="section level1">
+<h1><span class="header-section-number">1</span> Introducción</h1>
+<div id="que-es-la-eph" class="section level2">
+<h2><span class="header-section-number">1.1</span> ¿Qué es la EPH?</h2>
+<p><img src="img/Marco%20analitico_conceptual%20EPH.jpg" /></p>
+</div>
+<div id="traduzcamos" class="section level2">
+<h2><span class="header-section-number">1.2</span> Traduzcamos</h2>
+<div id="objetivos-de-la-eph" class="section level3">
+<h3><span class="header-section-number">1.2.1</span> Objetivos de la EPH</h3>
+<p><strong>El objetivo general</strong> de la encuesta es el conocimiento de un aspecto de nuestra realidad: La inserción de la población en la estructura económico-social<sup>1</sup>.</p>
+<p>.footnote[
+[1] <a href="https://www.indec.gob.ar/ftp/cuadros/sociedad/metodologia_eph_continua.pdf">La nueva Encuesta Permanente deHogares de Argentina. 2003</a>]</p>
+<p>Dicha inserción puede ser analizada a partir de tres ejes:</p>
+<ol style="list-style-type: decimal">
+<li>Características demográficas.</li>
+<li>Inserción en la producción de bienes y servicios.</li>
+<li>Participación en la distribución del producto social.</li>
+</ol>
+</div>
+</div>
+<div id="caracteristicas-de-la-eph" class="section level2">
+<h2><span class="header-section-number">1.3</span> Características de la EPH</h2>
+<ul>
+<li><strong>Orígen:</strong> La encuesta nace en 1973 con la modalidad de relevamiento “<em>puntual</em>”: 2 ondas por año, en mayo y octubre.</li>
+<li><strong>Cambios:</strong> En 2003 se lleva adelante la reformulación de la encuesta: pasa a ser un relevamiento contínuo y trimestral, relevandose 4 veces al año.</li>
+<li><strong>Esquema</strong>: centralización normativa (equipo central) - descentralización ejecutvia (equipos provinciales).</li>
+<li><strong>Cobertura o dominio de estimación</strong>: Principales aglomerados urbanos. Fue creciendo progresivamente desde la puntual hacia la continua, hasta llega a 31 aglomerados urbanos (todas las capitales de provincia + aquellos aglomerados con +100.000 habitantes).</li>
+<li><strong>Concepto de aglomerado</strong>: <em>En las encuestas de fuerza de trabajo dos localidades distintas, pero próximas y que conforman en realidad un único mercado de trabajo, son tomadas como un único aglomerado.</em><sup>2</sup></li>
+</ul>
+<p>.footnote[
+[2] <a href="https://www.indec.gob.ar/ftp/cuadros/sociedad/eph_muestras_74-03.pdf">EPH. Actualización del diseño de sus muestras 1974-2003</a>]
+<br></p>
+<ul>
+<li>La encuesta representa al 72% del total urbano (En Arg. según el censo 2010 la población urbana llegaba al 90%)</li>
+<li>Que es el 62% del total pais</li>
+<li>Una vez al año se aplica al total urbano (EAHU).</li>
+<li>Proyecto en etapa de pruebas: cobertura del ámbito rural/urbano-rural (extensión al total país).</li>
+</ul>
+</div>
+<div id="la-muestra" class="section level2">
+<h2><span class="header-section-number">1.4</span> La Muestra</h2>
+<ul>
+<li><p>La Encuesta Permanente de Hogares es una encueta por muestreo: relevo a un “pequeño” puñado de hogares que representan al conjunto de la población.</p>
+<ul>
+<li>Diseño Muestral: bietápica estratificada.</li>
+<li>Tener en cuenta:
+<ul>
+<li>La representatividad</li>
+<li>El margen de error</li>
+<li>Coeficientes de variación de los estimadores</li>
+<li>Límite superior/inferior de la estimación puntual</li>
+</ul></li>
+<li>Esquema de rotación: 2-2-2 (la vivienda entra dos trimestres consecutivos - descansa dos trimestres consecutivos - vuelve a la muestra dos trimestres consecutivos)</li>
+</ul></li>
+</ul>
+<div id="principales-tematicas-abordadas-por-la-eph" class="section level3">
+<h3><span class="header-section-number">1.4.1</span> Principales temáticas abordadas por la EPH</h3>
+<ul>
+<li>Características demográficas básicas</li>
+<li>Características ocupacionales</li>
+<li>Características migratorias</li>
+<li>Características habitacionales</li>
+<li>Características educacionales</li>
+<li>Características de ingreso</li>
+</ul>
+</div>
+</div>
+<div id="instrumento-de-medicion-el-medio-hacia-la-operacionalizacion-de-los-objetivos" class="section level2">
+<h2><span class="header-section-number">1.5</span> Instrumento de medición: El medio hacia la operacionalización de los objetivos</h2>
+<ul>
+<li>Operacionalizar: pasar de conceptos teóricos y abstractos a indicadores concretos y medibles.</li>
+<li>Recordar conceptos:
+<ul>
+<li><em>Confiabilidad</em> (que el instrumento mida lo mismo sobre el mismo fenómeno a lo largo del tiempo)</li>
+<li><em>Validez</em> (¿medimos lo que decimos que queremos medir?)</li>
+</ul></li>
+</ul>
+</div>
+<div id="tres-cuestionarios" class="section level2">
+<h2><span class="header-section-number">1.6</span> Tres cuestionarios</h2>
+<div id="cuestionario-de-vivienda" class="section level3">
+<h3><span class="header-section-number">1.6.1</span> Cuestionario de vivienda</h3>
+<ul>
+<li><strong>Definición</strong>: <em>“cualquier recinto fijo o móvil que ha sido construído o adaptado para alojar personas. Las viviendas pueden ser particulares o colectivas. La EPH sólo encuesta las particulares”.</em></li>
+<li>Principales dimensiones que aborda el cuestionario de vivienda:
+* Identificación de viviendas y hogares
+* Características de la vivienda y hábitat
+* Condición de residencia</li>
+</ul>
+</div>
+<div id="cuestionario-de-hogar" class="section level3">
+<h3><span class="header-section-number">1.6.2</span> Cuestionario de hogar</h3>
+<ul>
+<li><strong>Definición</strong>: <em>“Persona o grupo de personas parientes o no, que viven bajo un mismo techo y comparten los gastos de alimentación”</em></li>
+<li><p>Principales dimensiones:</p>
+<pre><code>  + Características habitacionales
+  + Caracetrísticas demográficas básicas (Sexo, edad, relación de parentesco)
+  + Características educacionales (alfabetización, nivel educativo)
+  + Condición de migración (país de nacimiento, de residencia en los últimos 5 años)
+  + Cobertura de salud
+  + División social del trabajo doméstico en el hogar
+  + Presencia de discapacitados en el hogar
+  + Estrategias y fuentes de manutención de los hogares
+  + Ingresos monetarios no laborales</code></pre></li>
+</ul>
+<div id="el-jefe-o-la-jefa-de-hogar" class="section level4">
+<h4><span class="header-section-number">1.6.2.1</span> El jefe o la jefa de hogar</h4>
+<p><strong>Definición:</strong> <em>Aquella persona reconocida como tal por los demás miembros del hogar.</em>
+- <strong>No es estático.</strong> Responde tanto a un modelo general de asignación social y sexual de roles al interior del hogar como a criterios operativos:</p>
+<pre><code>+ económicos (quien trabaja / quien más cobra)
++ antigüedad
++ horarios (a quien se encuentra en el hogar)</code></pre>
+<ul>
+<li><p>En caso de no haber acuerdo entre los miembros del hogar acerca de quién es el jefe o la jefa, se asigna por el o la encuestadora según los siguientes criterios (en orden de prioridad):</p>
+<pre><code>1. Quien tiene a su cargo la responsabilidad económica del hogar
+1. El miembro más antiguo del hogar
+1. Quien haya acudido al llamado</code></pre></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="marco-analitico-y-tematico-de-la-eph" class="section level2">
+<h2><span class="header-section-number">1.7</span> Marco analítico y temático de la EPH</h2>
+<div id="cuestionario-de-individuos" class="section level3">
+<h3><span class="header-section-number">1.7.1</span> Cuestionario de individuos</h3>
+<ul>
+<li><strong>Aplicación:</strong> Todas aquellas personas residentes del hogar mayores de 10 años (niñosy niñas en edad escolar vs en edad de trabajar, en Argentina y otros países).</li>
+<li><strong>Respondentes</strong> Mayor de 18 años (Puede ser auto o no auto-respondente)</li>
+<li><p><strong>Mide el principal concepto: El Trabajo</strong>:</p>
+<ul>
+<li>Definiión de la 19° Conferencia Internacional del Trabajo - OIT (CIET, 2013): Todas las actividades desarrolladas en unidades económicas por personas de cualquier sexo con el fin de producir bienes y servicios para el consumo de terceros o autoconsumo.</li>
+<li>EPH: Es toda actividad destinada a la producción de bienes y servicios con valor económico en el mercado (trabajo en la ocupación)</li>
+</ul></li>
+<li><em><strong>La EPH toma una definición acotada del concepto de trabajo, acorde a sus objetivos y a sus instrumentos. No puede perder la capacidad de medir.</strong></em></li>
+<li><p>Entonces, ¿según la EPH, a quienes se los considera “trabajando”?</p>
+<ul>
+<li>¿Si realiza actividades laborales pagas en dinero o especie (en relación de dependencia, changas, trabajos temporarios, etc.)?</li>
+</ul>
+<p>SÍ</p>
+<ul>
+<li>¿Si rrealiza actividades para su propio consumo?</li>
+</ul>
+<p>NO</p>
+<ul>
+<li>¿Si realiza una contraprestación laboral en virtud de la recepción de un subsidio o plan social?</li>
+</ul>
+<p>SÍ</p>
+<ul>
+<li>Si es trabajador o trabajadora por cuenta propia con instalaciones (taller, negocio u oficina) y concurrió a su lugar de trabajo aunque no tuvo clientes?</li>
+</ul>
+<p>SÍ</p></li>
+<li></li>
+</ul>
+<p><br></p>
+<p><br></p>
+<p><br></p>
+<ul>
+<li><p>¿Si realiza actividades domésticas en su hogar (por ej. Ama de casa)?</p>
+<p>NO</p></li>
+<li><p>¿Si realiza actividades voluntarias?</p>
+<p>NO</p></li>
+<li><p>¿Si realiza actividades laborales no remuneradas (por ej. docentes ad-honorem, pasantes)?</p>
+<p>SÍ</p></li>
+<li></li>
+</ul>
+</div>
+</div>
+<div id="cuestinario-individual-principales-indicadores" class="section level2">
+<h2><span class="header-section-number">1.8</span> Cuestinario individual: Principales indicadores</h2>
+<ul>
+<li><p><strong>Condición de actividad:</strong> relación de las personas con la producción de bienes y servicios con valor económico en el mercado.</p>
+<ul>
+<li><p>Categorías de la variable:</p>
+<ul>
+<li><p>Ocupado u ocupada (quienes se encuentran trabajando en la semana de referencia o no trabajando pero manteniendo un puesto de trabajo -suspensiones-)</p></li>
+<li><p>Desocupado o desocupada (quienes no tienen trabajo, están disponibles para trabajar y buscan trabajo activamente en algún momento de los últimos 30 días)</p></li>
+<li><p>Inactivo o inactiva (quienes no se encuentran trabajando ni buscaron activamente trabajo en el período de referencia -últimos 30 días-)</p></li>
+</ul></li>
+</ul></li>
+<li><p><strong>Población económicamente activa:</strong> Aquellas personas que tienen una ocupación o que sin tenerla la están buscando activamente (población ocupada + desocupada)</p></li>
+<li></li>
+</ul>
+</div>
+<div id="caracterizacion-de-la-poblacion-ocupada" class="section level2">
+<h2><span class="header-section-number">1.9</span> Caracterización de la población ocupada</h2>
+<ul>
+<li><p><strong>Pluriempleo</strong></p></li>
+<li><p><strong>Subocupación y sobreocupación -horaria-</strong></p></li>
+<li><p><strong>Demanda de empleo</strong></p></li>
+<li><p><strong>Categoría ocupacional:</strong> En cuanto a la posición que tienen las personas respecto al esquema de relaciones sociales de producción, de un sistema de producción histórico y vigente (el capitalismo), los individuos se pueden clasificarse en:</p>
+<ul>
+<li><p>Patrones</p></li>
+<li><p>Cuenta propia</p></li>
+<li><p>Asalariados</p></li>
+<li><p>Trabajadores familiares</p></li>
+</ul></li>
+</ul>
+<p><img src="img/Determinaci%C3%B3n%20de%20la%20condici%C3%B3n%20de%20actividad.JPG" /></p>
+<div id="otros-indicadores-para-describir-a-la-poblacion-ocupada" class="section level3">
+<h3><span class="header-section-number">1.9.1</span> Otros indicadores para describir a la población ocupada</h3>
+<ul>
+<li><p>Intencidad en la inserción (subempleo)</p></li>
+<li><p>Búsqueda de otra ocupación (y sus causas)</p></li>
+<li><p>Tamaño del establecimiento</p></li>
+<li><p>Antigüedad en el puesto de trabajo / Continuidad laboral</p></li>
+<li><p>Calidad del empleo</p></li>
+<li><p>Utilización de capital (propio / ajeno)</p></li>
+<li><p>Movimientos interurbanos</p></li>
+</ul>
+<p><img src="img/Indicadores%20vinculados%20a%20la%20inserci%C3%B3n%20en%20el%20mercado%20de%20trabajo.JPG" width="1000" /></p>
+</div>
+<div id="caracterizacion-de-la-poblacion-desocupada" class="section level3">
+<h3><span class="header-section-number">1.9.2</span> Caracterízación de la población desocupada</h3>
+<p><br></p>
+<ul>
+<li><p>Tiempo de búsqueda</p></li>
+<li><p>Razones por las que no encuentra trabajo</p></li>
+<li><p>Temporalidad en la desocupación (nuevo desocupado / Viejo desocupado)</p></li>
+<li><p>Características de la última ocupación</p></li>
+</ul>
+<p><img src="img/Grafico_condicion_actividad_1t_2019.jpg" /></p>
+</div>
+<div id="clasificadores-utilizados-en-la-eph-rama-de-actividad-y-tarea-ocupacion" class="section level3">
+<h3><span class="header-section-number">1.9.3</span> Clasificadores utilizados en la EPH (Rama de actividad y Tarea / Ocupación)</h3>
+<ul>
+<li><p><strong>Actividad (rama):</strong> <a href="https://www.indec.gob.ar/ftp/cuadros/menusuperior/clasificadores/notas_explicativas_caes_v2018.pdf">Clasificador de Actividades para Encuestas Sociodemográficas (CAES-MERCOSUR)</a></p></li>
+<li><p><strong>Ocupación:</strong> <a href="https://www.indec.gob.ar/ftp/cuadros/menusuperior/clasificadores/definiciones_conceptuales_cno.pdf">Clasificador Nacional de Ocupaciones (CNO-2001-INDEC)</a></p></li>
+<li><p><strong>Códigos geográficos:</strong> <a href="https://www.indec.gob.ar/ftp/cuadros/menusuperior/eph/codigospaises_09.pdf">Países</a> y <a href="https://www.indec.gob.ar/ftp/cuadros/menusuperior/eph/codigosprovincias_09.pdf">provincias</a></p></li>
+<li></li>
+</ul>
+<p>Acceso a materiales de la Encuesta:</p>
+<ul>
+<li><p><a href="https://www.indec.gob.ar/ftp/cuadros/menusuperior/eph/EPH_registro_1t19.pdf">Diseño de registro a agosto de 2019</a></p></li>
+<li><p><a href="https://www.indec.gob.ar/ftp/cuadros/sociedad/EPHContinua_CIndividual.pdf">Cuestionario individual</a></p></li>
+<li><p><a href="https://www.indec.gob.ar/ftp/cuadros/sociedad/EPHContinua_CHogar.pdf">Cuestionario Hogar</a></p></li>
+<li><p><a href="https://www.indec.gob.ar/ftp/cuadros/sociedad/EPHContinua_CVivienda.pdf">Cuestionario vivienda</a></p></li>
+<li><p><a href="https://www.indec.gob.ar/ftp/cuadros/sociedad/metodologia_eph_continua.pdf">La nueva EPH contínua</a></p></li>
+<li><p><a href="https://www.indec.gob.ar/ftp/cuadros/menusuperior/eph/EPH_nota_metodologica_1_trim_2019.pdf">Consideraciones sobre la revisión, evaluación y recuperación de la EPH. Nota metodológica actualizada para el uso de los datos del primer trimestre de 2019</a></p></li>
+<li><p><a href="https://www.indec.gob.ar/uploads/informesdeprensa/mercado_trabajo_eph_1trim19B489ACCDF9.pdf">Informe de mercado de trabajo a 1er trimestre de 2019</a></p></li>
+<li><p><a href="https://www.indec.gob.ar/indec/web/Institucional-Indec-bases_EPH_tabulado_continua">Sistema de consulta a los cuadros regulares de la EPH contínua</a></p></li>
+<li><p><a href="https://www.indec.gob.ar/indec/web/Nivel4-Tema-1-39-120">Cartografía de la EPH</a></p></li>
+<li><p>class: middle, center, inverse
+## Ejercicios</p></li>
+<li><p>Identificar en los cuestionarios de vivienda, de hogar e individual las preguntas que dan cuenta de las áreas temáticas abordadas por la eph.</p></li>
+<li><p>Identificar, a su vez, qué preguntas dan cuenta de las temáticas del mercado de trabajo (tipo de inserción) y cuáles vinculadas al circuito de satisfacción de necesidades.</p></li>
+<li><p>class: center, middle, inverse</p></li>
+</ul>
+<p>Gracias!</p>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
